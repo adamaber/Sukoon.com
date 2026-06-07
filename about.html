@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- العنوان الرئيسي للموقع -->
+    <title>من نحن | منصة سكون - د. غادة عطية</title>
+
+    <!-- وصف الموقع الخاص بصفحة من نحن -->
+    <meta name="description"
+        content="تعرف على منصة سكون والدكتورة غادة عطية، رحلتنا ورؤيتنا في تقديم أفضل الاستشارات النفسية، برامج تعديل السلوك، وتأهيل ذوي الاحتياجات الخاصة.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dr. Ghada Attia">
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" href="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%8لوجو_j1sxxu.png">
+
+    <!-- تحسين ظهور الموقع على الموبايل -->
+    <meta name="theme-color" content="#2c5d63">
+
+    <!-- استدعاء خط Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ملف CSS الأصلي للموقع -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon"
+        href="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%88_j1sxxu.png">
+
+
+    <!-- رابط مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* --- استايل مخصص ومبسط لصفحة من نحن (3 أقسام) --- */
+
+        /* 1. قسم الهيرو الرئيسي */
+        .about-hero {
+            position: relative;
+            background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1780838398/WhatsApp_Image_2026-06-07_at_16.17.02_xverxy.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 160px 20px 100px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.575), rgba(0, 0, 0, 0.575));
+            z-index: 1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        /* تنسيقات عامة للأقسام */
+        .about-section {
+            padding: 90px 20px;
+        }
+
+        .about-section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* عناوين الأقسام */
+        .sec-badge {
+            display: inline-block;
+            background-color: rgba(97, 164, 173, 0.15);
+            color: var(--primary-color);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .sec-title {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .sec-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin-top: 12px;
+            border-radius: 2px;
+        }
+
+        .sec-desc {
+            color: var(--text-dark);
+            line-height: 2;
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* حاوي الصور الاحترافي */
+        .img-box {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .img-box:hover img {
+            transform: scale(1.03);
+        }
+
+        .img-box::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--accent-color);
+            border-radius: 15px;
+            margin: 15px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* قائمة السيرة الذاتية والتخصصات */
+        .bio-list {
+            list-style: none;
+            margin-top: 25px;
+            padding: 0;
+        }
+
+        .bio-list li {
+            position: relative;
+            padding-right: 35px;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .bio-list li i {
+            position: absolute;
+            right: 0;
+            top: 4px;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* التجاوب مع الشاشات المختلفة */
+        @media (max-width: 992px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-section {
+                padding: 60px 20px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .sec-title {
+                font-size: 2rem;
+            }
+
+            .img-box {
+                max-width: 550px;
+                margin: 0 auto;
+            }
+
+            /* جعل الصورة تأتي بعد النص في قسم العيادة وتأتي قبل النص في قسم الدكتورة للموازنة */
+            .doctor-profile-section .img-box {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== الهيدر الرئيسي للموقع ==================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-text-link">
+                <span class="logo-main">سُكون</span>
+                <span class="logo-sub">د. غادة عطية</span>
+                <span class="logo-dot">.</span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <div class="mobile-menu-logo">
+                    <span class="logo-main">سُكون</span>
+                    <span class="logo-sub">د. غادة عطية</span>
+                    <span class="logo-dot">.</span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+                    <li><a href="serves.html" class="nav-item">خدماتنا</a></li>
+                    <li><a href="book.html" class="nav-item">الكتب</a></li>
+                    <li><a href="about.html" class="nav-item active">من نحن</a></li>
+                    <li class="contact-li"><a href="contact.html" class="nav-item contact-btn">تواصل معنا</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="قائمة التنقل">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- ==================== القسم 1: الهيرو (عنوان على صورة) ==================== -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>من نحن</h1>
+        </div>
+    </section>
+
+    <!-- ==================== القسم 2: تعريف عن موقع ومنصة سكون ==================== -->
+    <section class="about-section">
+        <div class="section-container grid-2">
+            <div>
+                <span class="sec-badge">مساحتكم الآمنة</span>
+                <h2 class="sec-title">منصة سُكون الرقمية</h2>
+                <p class="sec-desc">تأسست منصة "سُكون" لتكون الملاذ الرقمي الأول والأكثر أماناً لكل من يبحث عن الاطمئنان
+                    والسلام الداخلي. جاءت فكرة المنصة لتكسر حواجز الصمت وتوفر رعاية طبية واستشارية متكاملة تدمج بين
+                    الأساليب العلمية الحديثة والعمق الإنساني الدافئ.</p>
+                <p class="sec-desc">نحن نهتم بتقديم بيئة علاجية تفاعلية تضمن السرية المطلقة والخصوصية التامة، لمساعدتكم
+                    على فهم مشاعركم، وتفكيك العقد النفسية المتراكمة، بالإضافة إلى تقديم برامج إرشادية مخصصة للآباء
+                    والأمهات لتعديل سلوك الأطفال وتأهيل أصحاب الهمم بوعي واحترافية.</p>
+            </div>
+            <div class="img-box">
+                <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780838398/WhatsApp_Image_2026-06-07_at_16.17.02_xverxy.jpg"
+                    alt="عن منصة سكون للاستشارات النفسية">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== القسم 3: تعريف بالدكتورة وتخصصاتها ==================== -->
+    <section class="about-section" style="background-color: #f8fafb;">
+        <div class="section-container grid-2 doctor-profile-section">
+            <div class="img-box">
+                <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822048/%D9%86%D9%85%D8%B2%D9%8A%D9%84_gxkdkc.png"
+                    alt="د. غادة عطية - مؤسس منصة سكون">
+            </div>
+            <div>
+                <span class="sec-badge">المستشار العلاجي</span>
+                <h2 class="sec-title">د. غادة عطية</h2>
+                <p class="sec-desc">استشارية ومعالجة نفسية  كرست مسيرتها المهنية الطويلة لمساعدة الأفراد والأسر
+                    على تجاوز الأزمات وبناء حياة متوازنة. تمتاز بأسلوبها الذي يجمع بين التمكين المعرفي والاحتواء
+                    الإنساني، وهي صاحبة رؤية رائدة في دمج ذوي الاحتياجات الخاصة في المجتمع.</p>
+                   
+
+                    <ul class="bio-list">
+                        <li><i class="fas fa-graduation-cap"></i> دكتوراه في علم النفس والاستشارات النفسية والسلوكية.
+                        </li>
+                        <li><i class="fas fa-brain"></i> خبيرة ومتخصصة في برامج تعديل السلوك وعلاج حالات فرط الحركة،
+                            التوحد،
+                            وصعوبات التعلم.</li>
+                        <li><i class="fas fa-book-open"></i> مؤلفة الكتاب الأكثر مبيعاً وعمقاً "كُلُّنَا مَرْضَى...
+                            لَكِنَّنَا نُجِيدُ التَّمْثِيل".</li>
+                        <li><i class="fas fa-certificate"></i> عضو مستشار في أبرز الجمعيات والمجالس النفسية والتربوية
+                            الإقليمية.</li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== الفوتر الرئيسي للموقع ==================== -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-container">
+
+                <div class="footer-column brand-col">
+                    <a href="index.html" class="logo-text-link">
+                        <span class="logo-main">سُكون</span>
+                        <span class="logo-sub">د. غادة عطية</span>
+                        <span class="logo-dot">.</span>
+                    </a>
+                    <p class="brand-desc">
+                        مساحتك الآمنة لخلع الأقنعة وبدء رحلة التعافي النفسي. نرافقك خطوة بخطوة نحو بناء حياة أكثر
+                        اتزانًا واطمئنانًا.
+                    </p>
+                    <div class="social-links social-icons">
+                        <a href="https://www.facebook.com/share/1BZ2SYhh7F/" class="social-icon" target="_blank"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dr.ghada_attia?igsh=ZjQwOW0wMG5oODJ0" class="social-icon"
+                            target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@dr_ghada_attia?_r=1&_t=ZS-96C08nLYHye" class="social-icon"
+                            target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/dr-ghada-attia-9a28b12a5" class="social-icon"
+                            target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن الدكتورة</a></li>
+                        <li><a href="serves.html">الخدمات العلاجية</a></li>
+                        <li><a href="book.html">المكتبة والإصدارات</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">الدعم والمساعدة</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">حجز الجلسات</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column contact-col">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>المقر الان تحت الصيانة</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span dir="ltr">+20 122 778 4244</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sokoon-drghada.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <p class="copyrights">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة <strong>سُكون</strong> | تصميم وتطوير بكل حب
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- استدعاء ملف الـ JS الأصلي لتشغيل القائمة على الموبايل -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

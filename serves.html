@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- العنوان الرئيسي للموقع -->
+    <title>خدماتنا | منصة سكون - د. غادة عطية</title>
+
+    <!-- وصف الصفحة وتحسين الـ SEO -->
+    <meta name="description"
+        content="اكتشف الخدمات العلاجية والاستشارية في منصة سكون: جلسات دعم نفسي، برامج تعديل السلوك، وتأهيل ذوي الاحتياجات الخاصة تحت إشراف د. غادة عطية.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dr. Ghada Attia">
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" href="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%8لوجو_j1sxxu.png">
+
+    <meta name="theme-color" content="#2c5d63">
+
+    <!-- استدعاء خط Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ملف CSS الأصلي للموقع -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <link rel="icon"
+        href="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%88_j1sxxu.png">
+
+    <!-- رابط مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* --- استايل مخصص، مكثف ومصغر لصفحة الخدمات --- */
+
+        /* 1. هيرو مصغر */
+        .services-hero {
+            position: relative;
+            background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1780825939/9bfd51a0207ccc2e21fa2eab036c29e3_nnog4z.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px 70px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .services-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 94, 101, 0.95), rgba(31, 68, 73, 0.85));
+            z-index: 1;
+        }
+
+        .services-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .services-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* 2. قسم شبكة الخدمات */
+        .services-section {
+            padding: 70px 20px;
+            background-color: #f8fafb;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 45px 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            border: 1px solid rgba(44, 94, 101, 0.05);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(44, 94, 101, 0.1);
+            border-color: rgba(97, 164, 173, 0.3);
+        }
+
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(97, 164, 173, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            font-size: 2.2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-dark);
+            font-size: 0.98rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin: 0;
+        }
+
+        /* 3. قسم دعوة للحجز السريع */
+        .quick-cta {
+            background-color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #edf2f4;
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .cta-text h4 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+
+        .cta-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0;
+            text-align: right;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+            background-color: #bf9b30;
+            transform: scale(1.03);
+        }
+
+        /* شاشات التابلت والموبايل */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cta-text h4,
+            .cta-text p {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .services-section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== الهيدر الرئيسي للموقع ==================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-text-link">
+                <span class="logo-main">سُكون</span>
+                <span class="logo-sub">د. غادة عطية</span>
+                <span class="logo-dot">.</span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <div class="mobile-menu-logo">
+                    <span class="logo-main">سُكون</span>
+                    <span class="logo-sub">د. غادة عطية</span>
+                    <span class="logo-dot">.</span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+                    <li><a href="serves.html" class="nav-item active">خدماتنا</a></li>
+                    <li><a href="book.html" class="nav-item">الكتب</a></li>
+                    <li><a href="about.html" class="nav-item">من نحن</a></li>
+                    <li class="contact-li"><a href="contact.html" class="nav-item contact-btn">تواصل معنا</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="قائمة التنقل">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- ==================== 1. قسم الواجهة الهيرو المصغر ==================== -->
+    <section class="services-hero">
+        <div class="services-hero-content">
+            <h1>خدماتنا العلاجية</h1>
+            <p>نقدم برامج وجلسات استشارية متخصصة ومصممة بعناية لمرافقتكم خطوة بخطوة نحو التوازن النفسي وبناء حياة أسرية
+                مطمئنة.</p>
+        </div>
+    </section>
+
+    <!-- ==================== 2. قسم كروت الخدمات (صغير واحترافي) ==================== -->
+    <section class="services-section">
+        <div class="services-container">
+            <div class="services-grid">
+
+                <!-- الخدمة 1 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>استشارات نفسية وجلسات فردية</h3>
+                    <p>مساحتك الخاصة والآمنة للتحدث بحرية ودون أحكام مسبقة. نساعدك في فك غموض المشاعر وتفكيك العقد
+                        النفسية المتراكمة، وعلاج اضطرابات القلق والتوتر، للوصول إلى التعافي والسلام الداخلي التام
+                        والاستقرار المعرفي المتكامل.</p>
+                </div>
+
+                <!-- الخدمة 2 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>تعديل السلوك والإرشاد الأسري</h3>
+                    <p>جلسات استشارية موجهة لمساعدة الآباء والأمهات وتدريبهم على تطبيق أحدث استراتيجيات تعديل السلوك
+                        الإيجابي للأطفال والمراهقين، وعلاج العناد والعدوانية، وفتح قنوات حوار دافئة وفعالة لبناء أسرة
+                        متماسكة ومتفهمة.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>العلاج النفسي ودعم البالغين</h3>
+                    <p>
+                        نقدم برامج علاجية وجلسات استشارية متخصصة لمساعدة البالغين في تجاوز الأزمات النفسية وضغوطات
+                        الحياة.
+                        نتميز بخبرة عميقة في تطبيق العلاج السلوكي المعرفي (CBT) للتعامل مع حالات:
+                        <span style="display: block; margin-top: 5px; font-weight: 600;">
+                            • اضطرابات القلق، التوتر، ونوبات الهلع <br>
+                            • الاكتئاب والتقلبات المزاجية الحادة <br>
+                            • صدمات الحياة، الفقد، والوسواس القهري
+                        </span>
+                        بهدف استعادة التوازن النفسي وبناء المرونة الفكرية التي تمكن الفرد من ممارسة حياته اليومية
+                        باطمئنان.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. شريط دعوة سريع للحجز ==================== -->
+    <section class="quick-cta">
+        <div class="services-container">
+            <div class="cta-box">
+                <div class="cta-text">
+                    <h4>هل تحتاج إلى استشارة خاصة وسريعة؟</h4>
+                    <p>جميع الاستشارات والجلسات تتم بسرية تامة وأمان واعي ومطلق يناسب نمط حياتك.</p>
+                </div>
+                <a href="contact.html" class="cta-btn">احجز جلستك الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== الفوتر الرئيسي للموقع ==================== -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-container">
+
+                <div class="footer-column brand-col">
+                    <a href="index.html" class="logo-text-link">
+                        <span class="logo-main">سُكون</span>
+                        <span class="logo-sub">د. غادة عطية</span>
+                        <span class="logo-dot">.</span>
+                    </a>
+                    <p class="brand-desc">
+                        مساحتك الآمنة لخلع الأقنعة وبدء رحلة التعافي النفسي. نرافقك خطوة بخطوة نحو بناء حياة أكثر
+                        اتزانًا واطمئنانًا.
+                    </p>
+                    <div class="social-links social-icons">
+                        <a href="https://www.facebook.com/share/1BZ2SYhh7F/" class="social-icon" target="_blank"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dr.ghada_attia?igsh=ZjQwOW0wMG5oODJ0" class="social-icon"
+                            target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@dr_ghada_attia?_r=1&_t=ZS-96C08nLYHye" class="social-icon"
+                            target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/dr-ghada-attia-9a28b12a5" class="social-icon"
+                            target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن الدكتورة</a></li>
+                        <li><a href="serves.html">الخدمات العلاجية</a></li>
+                        <li><a href="book.html">المكتبة والإصدارات</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">الدعم والمساعدة</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">حجز الجلسات</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column contact-col">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>المقر الان تحت الصيانة</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span dir="ltr">+20 122 778 4244</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sokoon-drghada.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <p class="copyrights">
+                    &copy; 2026 جميع الحقوق محفوظة لمنصة <strong>سُكون</strong> | تصميم وتطوير بكل حب
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- استدعاء ملف الـ JS الأصلي لتشغيل القائمة على الموبايل -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
