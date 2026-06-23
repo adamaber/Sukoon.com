@@ -719,115 +719,177 @@ body {
 /* ------------------------------------------------
    تصميم الـ Modal المنبثق في منتصف الشاشة
 ------------------------------------------------ */
+/* ------------------------------------------------
+   تصميم الـ Modal المنبثق - ستايل كتاب فاخر (Book Edition)
+------------------------------------------------ */
 .article-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition-smooth);
-  direction: rtl;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+    direction: rtl;
 }
 
 .article-modal.active {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(43, 56, 58, 0.4); 
-  backdrop-filter: blur(4px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 30, 31, 0.6); /* خلفية داكنة وهادئة لتركيز العين */
+    backdrop-filter: blur(10px);
 }
 
 .modal-wrapper {
-  background: var(--white);
-  width: 90%;
-  max-width: 650px;
-  max-height: 80vh;
-  border-radius: 24px;
-  position: relative;
-  z-index: 10;
-  padding: 35px;
-  box-shadow: 0 20px 40px rgba(44, 94, 101, 0.15);
-  overflow-y: auto;
-  transform: scale(0.9);
-  transition: var(--transition-smooth);
+    background: #fbf9f6; /* لون ورق الكتب الكلاسيكي (Off-white) مريح جداً للعين */
+    width: 90%;
+    max-width: 750px; /* عرض مثالي لسطر الكتاب (لا طويل جداً ولا قصير) */
+    max-height: 85vh;
+    border-radius: 16px; /* زوايا كلاسيكية ناعمة وليست دائرية بشكل مفرط */
+    position: relative;
+    z-index: 10;
+    padding: 50px 60px; /* حواف عريضة تشبه هوامش الكتب */
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transform: scale(0.96);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+    
+    /* تحسين السكرول بار ليختفي ويظهر بنعومة */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(44, 94, 101, 0.2) transparent;
+}
+
+/* تخصيص السكرول بار للمتصفحات الحديثة */
+.modal-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+.modal-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(44, 94, 101, 0.2);
+    border-radius: 10px;
 }
 
 .article-modal.active .modal-wrapper {
-  transform: scale(1);
+    transform: scale(1);
 }
 
+/* زر الإغلاق - هادئ وغير مشتت */
 .close-modal-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: var(--bg-light);
-  border: none;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  line-height: 33px;
-  cursor: pointer;
-  color: var(--text-muted);
-  transition: var(--transition-smooth);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #8a8a8a;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-modal-btn:hover {
-  background: rgba(97, 164, 173, 0.15);
-  color: var(--primary-color);
+    background: #111;
+    color: #fff;
+    border-color: #111;
 }
 
+/* تصنيف المقال */
 .modal-tag {
-  display: inline-block;
-  background: rgba(97, 164, 173, 0.12);
-  color: var(--primary-color);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+    display: inline-block;
+    color: var(--primary-color, #2c5e65);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* عنوان المقال - فخم وواضح */
 .modal-body h2 {
-  font-size: 1.6rem;
-  color: var(--text-dark);
-  margin-bottom: 15px;
-  line-height: 1.4;
-  padding-left: 25px;
+    font-family: 'Amiri', 'Traditional Arabic', 'Georgia', serif; /* خطوط سيريف كلاسيكية للكتب */
+    font-size: 2.2rem; 
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    font-weight: 700;
+    padding-left: 50px;
 }
 
 .modal-body hr {
-  border: 0;
-  border-top: 1px solid rgba(44, 94, 101, 0.1);
-  margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 35px;
 }
 
+/* ------------------------------------------------
+   هندسة خطوط المقال (Typography & Layout Like a Book)
+------------------------------------------------ */
 #modalFullContent {
-  color: var(--text-dark);
-  font-size: 1.05rem;
-  line-height: 1.8;
+    /* اعتماد خطوط مخصصة للقراءة الطويلة (احرص على استدعاء خط مثل Amiri أو Cairo في مشروعك) */
+    font-family: 'Amiri', 'Segoe UI', Tahoma, serif; 
+    color: #2b2b2b; /* أسود دافئ مريح للعين، ليس فاقعاً */
+    font-size: 1.25rem; /* حجم خط مثالي ومريح جداً للقراءة */
+    line-height: 2; /* مسافة مزدوجة تقريباً بين السطور لمنع التداخل واللغبطة */
+    text-align: justify; /* محاذاة النص من الطرفين كصفحات الكتب */
+    text-justify: inter-word;
 }
 
+/* تنسيق الفقرات وفصلها بذكاء */
+#modalFullContent p {
+    margin-bottom: 28px; /* مسافة سخية بين كل فقرة والتالية */
+    text-indent: 15px; /* حركة اختيارية: إزاحة خفيفة لأول سطر في الفقرة مثل الروايات */
+}
 
+/* العناوين الداخلية (الفصول أو النقاط الرئيسية) */
+#modalFullContent h3 {
+    font-family: 'Amiri', 'Segoe UI', serif;
+    font-size: 1.6rem;
+    color: #111;
+    margin-top: 45px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    padding-bottom: 8px;
+}
 
+/* تنسيق القوائم إذا وجدت داخل الكتاب */
+#modalFullContent ul, 
+#modalFullContent ol {
+    margin-bottom: 28px;
+    padding-right: 30px;
+}
 
+#modalFullContent li {
+    margin-bottom: 12px;
+    list-style-type: square; /* نقاط أنيقة */
+}
 
-
-
+/* الاقتباسات الهامة داخل المقال */
+#modalFullContent blockquote {
+    font-family: 'Amiri', serif;
+    font-size: 1.35rem;
+    border-right: 3px solid #111;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 20px 30px;
+    margin: 35px 0;
+    color: #444;
+    font-style: italic;
+}
 
 
 /* --- 9. قسم الكتاب وسلايدر الصور والنافذة العمودية --- */
