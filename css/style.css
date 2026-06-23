@@ -551,6 +551,285 @@ body {
 
 
 
+
+
+
+
+/* --- إعدادات قسم المقالات المميزة --- */
+.blog-section {
+  padding: 60px 0;
+  background-color: var(--bg-light);
+  direction: rtl;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* الـ Grid المطور ليستوعب 4 كروت بشكل ممتاز (auto-fit مع تصغير الحد الأدنى) */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* تصميم الكارت المصغر على ستايل كروت المنتجات */
+.blog-card {
+  background: var(--white);
+  border-radius: 0px; /* تصميم حاد بدون انحناءات */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* الصورة مستطيلة بأبعاد عرضية متناسقة */
+.card-img {
+  width: 100%;
+  height: 260px; 
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* محتوى الكارت الملموم */
+.card-content {
+  padding: 15px; 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tag {
+  align-self: flex-start;
+  background: rgba(97, 164, 173, 0.12);
+  color: var(--primary-color); 
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-radius: 0px;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.card-content p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* زرار القراءة السفلي */
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: right;
+  padding: 0;
+  margin-top: auto;
+  text-decoration: underline;
+  transition: var(--transition-smooth);
+}
+
+.read-more-btn:hover {
+  color: var(--accent-color);
+}
+
+/* زرار عرض المزيد في الأسفل */
+.more-articles-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-view-more {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-view-more:hover {
+  background-color: var(--accent-color);
+}
+
+/* ------------------------------------------------
+   Responsive: السلايدر للموبايل (تقليب يمين وشمال)
+------------------------------------------------ */
+@media (max-width: 768px) {
+  .blog-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding: 10px 5px 25px 5px;
+    scrollbar-width: none;
+  }
+  
+  .blog-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .blog-card {
+    min-width: 75%; /* حجم مثالي يوضح حافة الكارت اللي بعده ليدل على التمرير */
+    scroll-snap-align: center;
+  }
+}
+
+/* ------------------------------------------------
+   تصميم الـ Modal المنبثق في منتصف الشاشة
+------------------------------------------------ */
+.article-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+  direction: rtl;
+}
+
+.article-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 56, 58, 0.4); 
+  backdrop-filter: blur(4px);
+}
+
+.modal-wrapper {
+  background: var(--white);
+  width: 90%;
+  max-width: 650px;
+  max-height: 80vh;
+  border-radius: 24px;
+  position: relative;
+  z-index: 10;
+  padding: 35px;
+  box-shadow: 0 20px 40px rgba(44, 94, 101, 0.15);
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: var(--transition-smooth);
+}
+
+.article-modal.active .modal-wrapper {
+  transform: scale(1);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-light);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 33px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal-btn:hover {
+  background: rgba(97, 164, 173, 0.15);
+  color: var(--primary-color);
+}
+
+.modal-tag {
+  display: inline-block;
+  background: rgba(97, 164, 173, 0.12);
+  color: var(--primary-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.modal-body h2 {
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  line-height: 1.4;
+  padding-left: 25px;
+}
+
+.modal-body hr {
+  border: 0;
+  border-top: 1px solid rgba(44, 94, 101, 0.1);
+  margin-bottom: 20px;
+}
+
+#modalFullContent {
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+
+
+
+
+
+
+
 /* --- 9. قسم الكتاب وسلايدر الصور والنافذة العمودية --- */
 .books-section {
     padding: 100px 20px;
