@@ -270,6 +270,40 @@ body {
 
 
 
+/* تنسيق عنصر المقالات ليحتوي على النقطة */
+.nav-articles {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* مسافة بين كلمة المقالات والنقطة */
+}
+
+/* النقطة الحمراء الأساسية */
+.live-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: #ff4d4d; /* لون أحمر واضح وحيوي */
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+/* الحلقة اللي بتعمل تأثير النبض (Pulse) الخلفي باللون الأحمر */
+.live-pulse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ff4d4d;
+    animation: pulse-animation 1.8s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+
+
 
 
 
