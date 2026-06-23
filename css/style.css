@@ -675,6 +675,41 @@ body {
   margin-top: 40px;
 }
 
+
+
+
+
+/* الحالة الافتراضية للكروت المخفية (مغلقة تماماً وبدون أي أبعاد تسبب فراغات) */
+.blog-grid .hidden-card {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    /* توقيت حركي فخم ومريح للعين (Cubic Bezier) */
+    transition: max-height 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                margin 0.5s ease, padding 0.5s ease;
+}
+
+/* فئة التفعيل: تفتح الكارت كلياً بمرونة تامة */
+.blog-grid .hidden-card.show-smooth {
+    max-height: 1000px; /* رقم افتراضي أكبر من حجم الكارت ليسمح بالفتح الكامل */
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    /* إعادة المسافات والحشو الخاص بالتصميم الأصلي للكارت */
+    margin: revert; 
+    padding: revert;
+}
+
+
+
 .btn-view-more {
   display: inline-block;
   padding: 10px 30px;
