@@ -302,6 +302,18 @@ body {
     opacity: 0.6;
 }
 
+/* حركة النبض المستمر */
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.8); /* حجم انتشار النبضة */
+        opacity: 0; /* تختفي تدريجياً */
+    }
+}
+
 
 
 
