@@ -152,3 +152,63 @@ function closeModal() {
 openIndexBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 modalOverlayClose.addEventListener('click', closeModal);
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("articleModal");
+  const modalOverlay = modal.querySelector(".modal-overlay");
+  const closeBtn = modal.querySelector(".close-modal-btn");
+  
+  const modalTag = document.getElementById("modalTag");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalFullContent = document.getElementById("modalFullContent");
+
+  // دالة لفتح المودال وحقن البيانات ديناميكياً مع تعديل الروابط للـ SEO
+  const openArticle = (card) => {
+    const tag = card.querySelector(".card-tag").innerText;
+    const title = card.querySelector(".article-title").innerText;
+    const fullContent = card.querySelector(".full-content").innerHTML;
+    const slug = card.getAttribute("data-slug");
+
+    modalTag.innerText = tag;
+    modalTitle.innerText = title;
+    modalFullContent.innerHTML = fullContent;
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden"; // منع سكرول الخلفية عند فتح المودال
+
+    window.location.hash = slug; // إضافة الهاش للرابط لمساعدة أرشفة جوجل والـ Share
+  };
+
+  // ربط الأزرار الأربعة بالأكشن
+  document.querySelectorAll(".read-more-btn").forEach(button => {
+    button.addEventListener("click", (e) => {
+      const card = e.target.closest(".blog-card");
+      openArticle(card);
+    });
+  });
+
+  // دالة إغلاق المودال
+  const closeModal = () => {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+    // تنظيف الرابط وإزالة الهاش بشكل نظيف بدون ريفريش للصفحة
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+  };
+
+  closeBtn.addEventListener("click", closeModal);
+  modalOverlay.addEventListener("click", closeModal);
+
+  // ميزة الـ Deep Linking: لو حد فتح لينك بـ هاش معين يفتح المقال فوراً تلقائي
+  const currentHash = window.location.hash.replace("#", "");
+  if (currentHash) {
+    const targetCard = document.querySelector(`[data-slug="${currentHash}"]`);
+    if (targetCard) {
+      setTimeout(() => openArticle(targetCard), 100);
+    }
+  }
+});
