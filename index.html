@@ -856,118 +856,180 @@
 
     
 
-    <section id="books" class="books-section">
+   <section id="books" class="books-section">
         <div class="section-container">
 
             <div class="section-header">
                 <span class="section-badge">مؤلفات وإصدارات</span>
                 <h2 class="section-title">رحلتك الورقية نحو الشفاء</h2>
-                <p class="section-subtitle">إصدارات متميزة من تأليف د. غادة عطية، صُممت لتكون مرشدك النفسي اليومي في
-                    غياب الجلسات.</p>
+                <p class="section-subtitle">إصدارات متميزة من تأليف د. غادة عطية، صُممت لتكون مرشدك النفسي اليومي.</p>
             </div>
 
-            <div class="book-showcase">
+            <div class="books-grid-container">
 
-                <div class="book-gallery-container">
-                    <div class="book-slider">
-                        <div class="book-slide active-slide">
-                            <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780768657/WhatsApp_Image_2026-06-05_at_11.17.22_bdg7f3.jpg"
-                                alt="غلاف كتاب كلنا مرضى ولكننا نجيد التمثيل">
+                <div class="book-product-card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge-discount">وفر 65%</span>
+                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1782454222/%D8%BA%D9%84%D8%A7%D9%811_pv8prz.png"
+                            alt="غلاف كتاب كلنا مرضى ولكننا نجيد التمثيل" class="book-card-img">
+                    </div>
+
+                    <div class="card-content-wrapper">
+                        <span class="card-author">بقلم: د. غادة عطية</span>
+                        <h3 class="card-book-title">كُلُّنَا مَرْضَى... لَكِنَّنَا نُجِيدُ التَّمْثِيل</h3>
+
+                        <p class="card-book-brief">
+                            دليل نفسي شجاع يلمس الإنسان الذي يحاول النجاة كل يوم في صمت، ليأخذك في رحلة لخلع أقنعة
+                            التظاهر ومواجهة مساحاتك الصامتة لاستعادة سلامك الداخلي برحمة وأمان.
+                        </p>
+                        <div class="card-price-row">
+                            <span class="card-current-price">99 ج.م</span>
+                            <span class="card-old-price">250 ج.م</span>
                         </div>
-                        <div class="book-slide">
-                            <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780768653/WhatsApp_Image_2026-06-05_at_11.17.22_1_xndumi.jpg"
-                                alt="النبذة الترويجية لكتاب كلنا مرضى">
-                        </div>
-                        <div class="book-slide">
-                            <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780828985/WhatsApp_Image_2026-06-07_at_13.34.21_hn4sfg.jpg"
-                                alt="جلسة قراءة كتاب د. غادة عطية">
+
+                        <div class="card-actions-row">
+                            <a href="book.html#boks" class="btn-card-buy">اطلب نسختك الآن</a>
+                            <button class="btn-card-preview" onclick="openModal('indexModal1')">تصفح الفهرس</button>
                         </div>
                     </div>
 
-                    <button class="slider-btn prev-btn" id="bookPrev" aria-label="الصورة السابقة">&#10095;</button>
-                    <button class="slider-btn next-btn" id="bookNext" aria-label="الصورة التالية">&#10094;</button>
-
-                    <div class="book-slider-dots">
-                        <span class="b-dot active" data-b-slide="0"></span>
-                        <span class="b-dot" data-b-slide="1"></span>
-                        <span class="b-dot" data-b-slide="2"></span>
-                    </div>
+                    <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Product",
+                      "name": "كُلُّنَا مَرْضَى... لَكِنَّنَا نُجِيدُ التَّمْثِيل",
+                      "image": "https://res.cloudinary.com/dy2qgptrn/image/upload/v1782454222/%D8%BA%D9%84%D8%A7%D9%811_pv8prz.png",
+                      "description": "دليل نفسي شجاع يلمس الإنسان الذي يحاول النجاة كل يوم في صمت، ليأخذك في رحلة لخلع أقنعة التظاهر ومواجهة مساحاتك الصامتة لاستعادة سلامك الداخلي برحمة وأمان.",
+                      "brand": {
+                        "@type": "Brand",
+                        "name": "د. غادة عطية"
+                      },
+                      "offers": {
+                        "@type": "Offer",
+                        "url": "https://yourwebsite.com/book1-url", 
+                        "priceCurrency": "EGP",
+                        "price": "99",
+                        "availability": "https://schema.org/InStock",
+                        "itemCondition": "https://schema.org/NewCondition"
+                      }
+                    }
+                    </script>
                 </div>
 
-                <div class="book-details-wrapper">
-                    <div class="author-tag">بقلم: <span>د. غادة عطية</span></div>
-                    <h3 class="book-title">كُلُّنَا مَرْضَى... لَكِنَّنَا نُجِيدُ التَّمْثِيل</h3>
-
-                    <div class="book-price-tag">
-                        <span class="current-price">99 ج.م</span>
-                        <span class="old-price">250 ج.م</span>
-                        <span class="discount-badge">وفر 65%</span>
+                <div class="book-product-card">
+                    <div class="card-image-wrapper">
+                        <span class="card-badge-discount">وفر 60%</span>
+                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1782454215/%D8%B9%D9%84%D8%A7%D9%812_knkjlf.png"
+                            alt="غلاف كتاب حكايات لا تروى" class="book-card-img">
                     </div>
 
-                    <p class="book-description">
-                        <strong>"ليس كل ما نُظهره للناس... هو ما نشعر به في داخلنا."</strong><br><br>
-                        في هذا الكتاب، تأخذنا الدكتورة غادة عطية في رحلة نفسية شجاعة لنخلع الأقنعة ونواجه المساحات
-                        الصامتة في أعماقنا. هو ليس كتاباً عن المرض النفسي بمفهومه التقليدي، بل هو دليل يلمس الإنسان الذي
-                        يحاول النجاة كل يوم في صمت، ليمنحك مرشداً لخلع أقنعة التظاهر وبدء رحلة السلام الداخلي برحمة
-                        وأمان.
-                    </p>
+                    <div class="card-content-wrapper">
+                        <span class="card-author">بقلم: د. غادة عطية</span>
+                        <h3 class="card-book-title">حِكَايَاتٌ لَا تُرْوَى</h3>
 
-                    <ul class="book-features">
-                        <li><span class="feature-icon">✓</span> تجد فيه إجابات لأسئلتك الحائرة، وحكاياتك التي لم تُحك
-                            بعد.</li>
-                        <li><span class="feature-icon">✓</span> يساعدك على فهم ألمك وتصالحه، وتعلّم كيف تحمل حقيقتك
-                            برفق.</li>
-                        <li><span class="feature-icon">✓</span> بمثابة يد ممتدة إليك في لحظات الانكسار لتمنحك النور
-                            والتعافي الواعي.</li>
-                    </ul>
+                        <p class="card-book-brief">
+                            كتاب لا يقدم تشخيصات علمية، بل يحكي عن الإنسان؛ عن جزءه الخفي، عن الدموع التي لم تسقط
+                            والحروب التي دارت داخل القلوب في صمت، ليوثق حكايات مخبأة خلف الابتسامات العابرة قد تجد بينها
+                            حكاية تشبهك.
+                        </p>
 
-                    <div class="book-actions">
-                        <a href="book.html#boks" class="btn btn-buy">اطلب نسختك الموقعة الآن</a>
-                        <button class="btn btn-preview" id="openIndexBtn">تصفح الفهرس مجاناً</button>
+                        <div class="card-price-row">
+                            <span class="card-current-price">120 ج.م</span>
+                            <span class="card-old-price">300 ج.م</span>
+                        </div>
+
+                        <div class="card-actions-row">
+                            <a href="book.html#boks" class="btn-card-buy">اطلب نسختك الآن</a>
+                            <button class="btn-card-preview" onclick="openModal('indexModal2')">تصفح الفهرس</button>
+                        </div>
                     </div>
+
+                    <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org/",
+                      "@type": "Product",
+                      "name": "حِكَايَاتٌ لَا تُرْوَى",
+                      "image": "https://res.cloudinary.com/dy2qgptrn/image/upload/v1782454215/%D8%B9%D9%84%D8%A7%D9%812_knkjlf.png",
+                      "description": "كتاب لا يقدم تشخيصات علمية، بل يحكي عن الإنسان؛ عن جزءه الخفي، عن الدموع التي لم تسقط والحروب التي دارت داخل القلوب في صمت.",
+                      "brand": {
+                        "@type": "Brand",
+                        "name": "د. غادة عطية"
+                      },
+                      "offers": {
+                        "@type": "Offer",
+                        "url": "https://yourwebsite.com/book2-url",
+                        "priceCurrency": "EGP",
+                        "price": "120",
+                        "availability": "https://schema.org/InStock",
+                        "itemCondition": "https://schema.org/NewCondition"
+                      }
+                    }
+                    </script>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- النافذة المنبثقة الذكية بسكرول عمودي لصفحات الفهرس (تفتح عند الضغط على الزر) -->
-    <div class="index-modal" id="indexModal">
-        <div class="modal-overlay" id="modalOverlayClose"></div>
+    <div class="index-modal" id="indexModal1" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('indexModal1')"></div>
         <div class="modal-wrapper">
-            <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+            <button class="close-modal-btn" onclick="closeModal('indexModal1')">&times;</button>
 
-            <h4 class="modal-title">فهرس ومحتويات الكتاب </h4>
-            <p class="modal-hint">مرر لأسفل وتصفح كامل الفهرس</p>
+            <h4 class="modal-title">فهرس كتاب: كُلُّنَا مَرْضَى... لَكِنَّنَا نُجِيدُ التَّمْثِيل</h4>
+            <p style="color: var(--text-muted); font-size: 12px; margin: -10px 0 15px 0; text-align: right;">مرر لأسفل لتصفح كامل الفهرس</p>
 
-            <!-- حاوية السكرول العمودي لصفحات الفهرس -->
             <div class="modal-scroll-container">
-                <div class="index-scroll-gallery">
-                    <div class="index-scroll-page">
-                        <span class="page-indicator-tag">الفصل الأول - صفحة 1</span>
-                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780768647/WhatsApp_Image_2026-06-05_at_11.17.44_ukuq9i.jpg"
-                            alt="الفهرس الجزء الأول">
-                    </div>
-                    <div class="index-scroll-page">
-                        <span class="page-indicator-tag">الفصل الثاني - صفحة 2</span>
-                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.43_fpfo3n.jpg"
-                            alt="الفهرس الجزء الثاني">
-                    </div>
-                    <div class="index-scroll-page">
-                        <span class="page-indicator-tag">الفصل الثالث - صفحة 3</span>
-                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.44_1_zr7uh9.jpg"
-                            alt="الفهرس الجزء الثالث">
-                    </div>
-                    <div class="index-scroll-page">
-                        <span class="page-indicator-tag">الفصل الرابع - صفحة 4</span>
-                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.44_3_stjmvj.jpg"
-                            alt="الفهرس الجزء الثالث">
-                    </div>
-                    <div class="index-scroll-page">
-                        <span class="page-indicator-tag">الفصل الخامس - صفحة5</span>
-                        <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.44_4_tylrze.jpg"
-                            alt="الفهرس الجزء الثالث">
-                    </div>
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 1</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780768647/WhatsApp_Image_2026-06-05_at_11.17.44_ukuq9i.jpg" alt="الفهرس صفحة 1">
+                </div>
+
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 2</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.43_fpfo3n.jpg" alt="الفهرس صفحة 2">
+                </div>
+
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 3</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.44_1_zr7uh9.jpg" alt="الفهرس صفحة 3">
+                </div>
+
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 4</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.44_3_stjmvj.jpg" alt="الفهرس صفحة 4">
+                </div>
+
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 5</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780829360/WhatsApp_Image_2026-06-05_at_11.17.44_4_tylrze.jpg" alt="الفهرس صفحة 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="index-modal" id="indexModal2" style="display: none;">
+        <div class="modal-overlay" onclick="closeModal('indexModal2')"></div>
+        <div class="modal-wrapper">
+            <button class="close-modal-btn" onclick="closeModal('indexModal2')">&times;</button>
+
+            <h4 class="modal-title">فهرس كتاب: حِكَايَاتٌ لَا تُرْوَى</h4>
+            <p style="color: var(--text-muted); font-size: 12px; margin: -10px 0 15px 0; text-align: right;">مرر لأسفل لتصفح كامل الفهرس</p>
+
+            <div class="modal-scroll-container">
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 1</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1782452869/WhatsApp_Image_2026-06-26_at_08.38.10_fcnwxz.jpg" alt="فهرس حكايات لا تروى - صفحة 1">
+                </div>
+
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 2</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1782452869/WhatsApp_Image_2026-06-26_at_08.38.11_1_j5ecui.jpg" alt="فهرس حكايات لا تروى - صفحة 2">
+                </div>
+
+                <div class="index-scroll-page" style="margin-bottom: 20px; position: relative;">
+                    <span style="background: rgba(44, 94, 101, 0.1); color: var(--primary-color); font-size: 11px; font-weight: bold; padding: 4px 10px; display: inline-block; margin-bottom: 5px;">صفحة 3</span>
+                    <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1782452870/WhatsApp_Image_2026-06-26_at_08.38.11_z5ttmj.jpg" alt="فهرس حكايات لا تروى - صفحة 3">
                 </div>
             </div>
         </div>
