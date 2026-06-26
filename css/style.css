@@ -929,318 +929,258 @@ body {
 
 
 
-/* --- 9. قسم الكتاب وسلايدر الصور والنافذة العمودية --- */
+/* --- 1. إعدادات عامة ومتغيرات الألوان الخاصة بك --- */
+:root {
+    --primary-color: #2C5E65;     /* كحلي مخضر هادئ */
+    --accent-color: #61A4AD;      /* أزرق سماوي ناعم */
+    --bg-light: #F7F9FA;          /* خلفية بيضاء مائلة للرمادي */
+    --text-dark: #2B383A;         /* لون نصوص داكن */
+    --text-muted: #6E7E85;        /* لون نصوص ثانوية */
+    --white: #FFFFFF;
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 2. تنسيق حاوية وقسم الكتب الأساسي --- */
 .books-section {
-    padding: 100px 20px;
-    background-color: var(--white);
-    position: relative;
+    background-color: var(--bg-light);
+    padding: 60px 0;
+    direction: rtl; /* لضمان التنسيق العربي */
 }
 
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
+/* رأس القسم */
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-badge {
-    background-color: rgba(44, 94, 101, 0.08);
+    background: rgba(44, 94, 101, 0.1);
     color: var(--primary-color);
     padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
+    border-radius: 0px; /* تصميم حاد حواف */
+    font-size: 14px;
+    font-weight: bold;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .section-title {
-    font-size: 2.4rem;
-    color: var(--primary-color);
+    color: var(--text-dark);
+    font-size: 28px;
     font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
     color: var(--text-muted);
+    font-size: 15px;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
 }
 
-.book-showcase {
+/* --- 3. الـ Grid (كتابين بجانب بعض دائماً - تصميم فلات) --- */
+.books-grid-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    align-items: center;
-}
-
-/* حاوية سلايدر صور الكتاب (أفقي) */
-.book-gallery-container {
-    position: relative;
-    width: 340px;
-    height: 480px;
+    grid-template-columns: repeat(2, 1fr); /* عمودين ثابتين في كل الشاشات */
+    gap: 15px;
+    max-width: 900px;
     margin: 0 auto;
-    box-shadow: 0 15px 40px rgba(44, 94, 101, 0.12);
+}
+
+/* الكرت الفلات (بدون شادو، بدون ريديوس، بدون هافر حركي) */
+.book-product-card {
+    background: var(--white);
+    border-radius: 0px; 
+    box-shadow: none; 
     overflow: hidden;
-    background: #fff;
-}
-
-.book-slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.book-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-    transform: scale(0.95);
-}
-
-.book-slide.active-slide {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.book-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* أزرار تقليب صور الكتاب يمين ويسار */
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    transition: var(--transition-smooth);
-}
-
-.slider-btn:hover {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-.prev-btn {
-    right: 15px;
-}
-
-.next-btn {
-    left: 15px;
-}
-
-.book-slider-dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-}
-
-.book-slider-dots .b-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.book-slider-dots .b-dot.active {
-    background: var(--accent-color);
-    width: 20px;
-    border-radius: 4px;
-}
-
-/* تنسيقات النصوص والأزرار */
-.book-details-wrapper {
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(44, 94, 101, 0.15); /* حدود واضحة ومحددة */
 }
 
-.author-tag {
-    font-size: 0.95rem;
-    color: var(--accent-color);
+/* مكان الصورة داخل الكرت */
+.card-image-wrapper {
+    position: relative;
+    background: #fdfbf7;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px; /* طول متناسق للموبايل */
+    border-bottom: 1px solid rgba(44, 94, 101, 0.08);
+}
+
+.book-card-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 0px; 
+    filter: none; 
+}
+
+/* شارات الخصم الحادة */
+.card-badge-discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: var(--white);
+    padding: 4px 8px;
+    border-radius: 0px; 
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* محتوى تفاصيل الكرت */
+.card-content-wrapper {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-author {
+    color: var(--text-muted);
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.card-book-title {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
     font-weight: 700;
-    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
-.author-tag span {
-    color: var(--text-dark);
-}
-
-.book-title {
-    font-size: 2rem;
-    color: var(--text-dark);
-    font-weight: 800;
+.card-book-brief {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
     margin-bottom: 15px;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* إخفاء النص الزائد بعد سطرين */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.book-price-tag {
+/* الأسعار */
+.card-price-row {
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 8px;
 }
 
-.current-price {
-    font-size: 1.8rem;
-    font-weight: 800;
+.card-current-price {
+    font-size: 16px;
+    font-weight: 700;
     color: var(--primary-color);
 }
 
-.old-price {
-    font-size: 1.2rem;
+.card-old-price {
+    font-size: 12px;
     color: var(--text-muted);
     text-decoration: line-through;
 }
 
-.discount-badge {
-    background-color: #E2F6F0;
-    color: #27AE60;
-    padding: 4px 12px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border-radius: 6px;
-}
-
-.book-description {
-    font-size: 1.05rem;
-    color: var(--text-dark);
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.book-features {
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.book-features li {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
+/* صف الأزرار الحادة */
+.card-actions-row {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.feature-icon {
-    color: var(--accent-color);
-    font-weight: bold;
-}
-
-.book-actions {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-buy {
-    background-color: var(--primary-color);
+.btn-card-buy {
+    background: var(--primary-color);
     color: var(--white);
-    padding: 14px 30px;
-    border-radius: 50px;
-    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+    border-radius: 0px; 
     text-decoration: none;
-    box-shadow: 0 6px 15px rgba(44, 94, 101, 0.15);
+    font-weight: bold;
+    font-size: 12px;
     transition: var(--transition-smooth);
 }
 
-.btn-buy:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
+.btn-card-buy:hover {
+    background: var(--accent-color);
 }
 
-.btn-preview {
-    background-color: transparent;
+.btn-card-preview {
+    background: transparent;
     color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 700;
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+    border-radius: 0px; 
     cursor: pointer;
-    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
     transition: var(--transition-smooth);
 }
 
-.btn-preview:hover {
-    background-color: rgba(44, 94, 101, 0.05);
-    transform: translateY(-2px);
+.btn-card-preview:hover {
+    background: rgba(97, 164, 173, 0.08);
 }
 
-/* --- تصميم النافذة المنبثقة الذكية (الفهرس العمودي) --- */
+/* --- 4. استايل السلايد والـ Modal للفهرس (Slide-up Animation) --- */
 .index-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2000;
+    z-index: 9999;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* يفتح كـ ستايل السلايد من الأسفل في الموبايل */
     justify-content: center;
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
-.index-modal.open {
+.index-modal.active {
     opacity: 1;
-    visibility: visible;
+    pointer-events: auto;
 }
 
 .modal-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(27, 43, 46, 0.75);
-    backdrop-filter: blur(8px);
+    background: rgba(43, 56, 58, 0.6); 
+    backdrop-filter: blur(4px);
 }
 
 .modal-wrapper {
     position: relative;
     background: var(--white);
-    width: 90%;
-    max-width: 580px;
-    height: 85vh;
-    /* سقف الارتفاع لتشغيل السكرول */
-    border-radius: 24px;
-    padding: 30px 20px 20px 20px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-    z-index: 2010;
-    transform: translateY(-40px);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    max-width: 550px;
+    border-radius: 0px; /* حواف حادة */
+    padding: 25px 20px;
+    z-index: 10;
+    max-height: 85vh;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
+    
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.index-modal.open .modal-wrapper {
+.index-modal.active .modal-wrapper {
     transform: translateY(0);
 }
 
@@ -1248,135 +1188,114 @@ body {
     position: absolute;
     top: 15px;
     left: 20px;
-    background: transparent;
+    background: var(--bg-light);
     border: none;
-    font-size: 2.2rem;
+    font-size: 22px;
+    color: var(--text-dark);
+    width: 36px;
+    height: 36px;
+    border-radius: 0px; 
     cursor: pointer;
-    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition-smooth);
-    z-index: 2020;
 }
 
 .close-modal-btn:hover {
-    color: #E74C3C;
+    background: #e74c3c;
+    color: var(--white);
 }
 
 .modal-title {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-bottom: 4px;
-    text-align: center;
+    font-size: 18px;
+    color: var(--text-dark);
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: right;
+    padding-left: 40px;
 }
 
-.modal-hint {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* حاوية السكرول العمودي للفهرس */
 .modal-scroll-container {
-    width: 100%;
-    flex: 1;
     overflow-y: auto;
+    flex-grow: 1;
     padding-right: 5px;
-    scroll-behavior: smooth;
 }
 
-/* تخصيص مظهر شريط السكرول ليناسب ألوان الموقع الطبي */
 .modal-scroll-container::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
-
-.modal-scroll-container::-webkit-scrollbar-track {
-    background: #f1f5f6;
-    border-radius: 10px;
-}
-
 .modal-scroll-container::-webkit-scrollbar-thumb {
     background: var(--accent-color);
-    border-radius: 10px;
 }
 
-.modal-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
-}
-
-.index-scroll-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.index-scroll-page {
-    position: relative;
-    width: 100%;
-    background: #fcfdfe;
-    border: 1px solid #eef3f4;
-    border-radius: 14px;
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(44, 94, 101, 0.03);
-}
-
-.index-scroll-page img {
+.modal-scroll-container img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    border-radius: 0px;
+    margin-top: 10px;
     display: block;
-    border-radius: 8px;
 }
 
-.page-indicator-tag {
-    display: inline-block;
-    background: rgba(97, 164, 173, 0.12);
-    color: var(--primary-color);
-    padding: 4px 14px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    border-radius: 30px;
-    margin-bottom: 12px;
-}
-
-/* تجاوب الشاشات للموبايل */
-@media (max-width: 992px) {
-    .book-showcase {
-        grid-template-columns: 1fr;
-        gap: 40px;
+/* --- 5. شاشات التابلت والكمبيوتر (Responsive Breakpoints) --- */
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 36px;
+    }
+    
+    .books-grid-container {
+        gap: 30px; 
     }
 
-    .book-gallery-container {
-        width: 300px;
-        height: 420px;
-    }
-}
-
-@media (max-width: 480px) {
-    .book-actions {
-        flex-direction: column;
+    .card-image-wrapper {
+        height: 260px; /* تكبير الحاوية لتناسب الشاشات الكبيرة */
+        padding: 25px;
     }
 
-    .btn-buy,
-    .btn-preview {
-        width: 100%;
-        text-align: center;
+    .card-content-wrapper {
+        padding: 20px;
     }
 
+    .card-book-title {
+        font-size: 18px;
+    }
+
+    .card-book-brief {
+        font-size: 13px;
+        -webkit-line-clamp: 3; /* عرض 3 أسطر في الشاشات الواسعة */
+    }
+
+    .card-current-price {
+        font-size: 20px;
+    }
+
+    /* الأزرار بجانب بعضها في الكمبيوتر لمنع استطالة الكرت */
+    .card-actions-row {
+        flex-direction: row;
+    }
+
+    .btn-card-buy {
+        flex: 2;
+        font-size: 13px;
+    }
+
+    .btn-card-preview {
+        flex: 1;
+        font-size: 13px;
+    }
+
+    /* في الشاشات الكبيرة يفتح السلايد سنتر في منتصف الشاشة لشكل أرقى */
+    .index-modal {
+        align-items: center;
+    }
     .modal-wrapper {
-        height: 90vh;
-        padding: 25px 15px 15px 15px;
+        transform: scale(0.95) translateY(30px);
+        max-height: 80vh;
     }
-
-    .modal-title {
-        font-size: 1.15rem;
-    }
-
-    .index-scroll-page {
-        padding: 10px;
+    .index-modal.active .modal-wrapper {
+        transform: scale(1) translateY(0);
     }
 }
-
 
 
 /* --- 10. قسم الفوتر الاحترافي (Footer Section) --- */
