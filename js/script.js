@@ -338,3 +338,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
     if (overlay) overlay.addEventListener("click", closeModal);
 });
+
+
+
+
+
+
+
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'flex';
+    // استخدام setTimeout لضمان تفعيل حركة السلايد بسلاسة بعد الـ display
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.remove('active');
+    // الانتظار حتى تنتهي الحركة (0.4 ثانية) ثم إخفاء العنصر تماماً
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 400);
+}
