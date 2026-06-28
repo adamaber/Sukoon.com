@@ -63,7 +63,7 @@
             "description": "في هذه الحلقة، نغوص مع الدكتورة غادة عطية في فهم طبيعة الوسواس القهري، وأبرز أعراضه الطبية، وكيف تؤثر الأفكار والمخاوف المتكررة على السلوك اليومي.",
             "thumbnailUrl": "https://res.cloudinary.com/dy2qgptrn/image/upload/v1782659420/Gemini_Generated_Image_kq2ykykq2ykykq2y_mwiscm.png",
             "uploadDate": "2026-06-28T18:00:00+02:00",
-            "contentUrl": "https://res.cloudinary.com/dy2qgptrn/video/upload/v1782659309/%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA2_ee3bqr.mp4"
+            "contentUrl": "https://res.cloudinary.com/dy2qgptrn/video/upload/v1782659309/%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%A3%D8%AA2_ee3bqr.mp4"
           }
         }
       ]
@@ -71,11 +71,19 @@
     </script>
 
     <style>
-        /* ==================== تنسيق قسم البودكاست الرئيسي والتعريف ==================== */
-        .podcast-section {
-            background-color: var(--bg-light);
-            padding: 140px 20px 80px 20px;
+        /* ==================== التنسيقات الأساسية والخطوط ==================== */
+        body {
             font-family: 'Cairo', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ==================== تنسيق قسم البودكاست الرئيسي ==================== */
+        .podcast-section {
+            background-color: var(--bg-light, #f9f9f9);
+            padding: 160px 20px 80px 20px;
             direction: rtl;
         }
 
@@ -86,22 +94,23 @@
         }
 
         .podcast-main-title {
-            color: var(--primary-color);
+            color: var(--primary-color, #2c5d63);
             font-size: 2.6rem;
             font-weight: 700;
             margin-bottom: 15px;
         }
 
         .podcast-bio {
-            color: var(--text-muted);
+            color: var(--text-muted, #666);
             font-size: 1.1rem;
             line-height: 1.8;
             font-weight: 300;
         }
 
+        /* شبكة مرنة متجاوبة تماماً بدون Media Queries معقدة للجريد */
         .podcast-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
@@ -109,7 +118,7 @@
 
         /* ==================== تصميم الكارت الـ Flat ==================== */
         .podcast-card {
-            background-color: var(--white);
+            background-color: var(--white, #fff);
             border-radius: 0px;
             overflow: hidden;
             box-shadow: none;
@@ -117,12 +126,19 @@
             cursor: pointer;
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .podcast-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color, #2c5d63);
         }
 
         .card-thumbnail {
             position: relative;
             width: 100%;
             padding-top: 56.25%;
+            /* أبعاد 16:9 للحفاظ على النسبة ثابتة */
             background-color: #000;
         }
 
@@ -141,46 +157,59 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
+            opacity: 0.9;
+            transition: background 0.3s ease;
+        }
+
+        .podcast-card:hover .play-overlay {
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .play-icon {
-            background: var(--primary-color);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
+            background: var(--primary-color, #2c5d63);
+            color: var(--white, #fff);
+            width: 55px;
+            height: 55px;
             border-radius: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 16px;
+            font-size: 18px;
             padding-left: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .podcast-card:hover .play-icon {
+            transform: scale(1.1);
         }
 
         .card-content {
             padding: 20px;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-title {
-            color: var(--text-dark);
-            font-size: 1.2rem;
+            color: var(--text-dark, #222);
+            font-size: 1.25rem;
             margin-bottom: 10px;
             line-height: 1.5;
             font-weight: 600;
         }
 
         .card-description {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
+            color: var(--text-muted, #666);
+            font-size: 0.95rem;
+            line-height: 1.7;
             font-weight: 300;
         }
 
-        /* ==================== النافذة المنبثقة (Modal) المحدثة لملفات MP4 ==================== */
+        /* ==================== النافذة المنبثقة (Modal) المحدثة ==================== */
         .video-modal {
             position: fixed;
             top: 0;
@@ -193,7 +222,8 @@
             align-items: center;
             opacity: 0;
             pointer-events: none;
-            transition: var(--transition-smooth);
+            transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            padding: 15px;
         }
 
         .video-modal.active {
@@ -212,14 +242,20 @@
 
         .modal-wrapper {
             position: relative;
-            width: 92%;
+            width: 100%;
             max-width: 850px;
             background: #111;
             border-radius: 0px;
             overflow: hidden;
-            box-shadow: none;
             display: flex;
             flex-direction: column;
+            z-index: 10;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .video-modal.active .modal-wrapper {
+            transform: scale(1);
         }
 
         .modal-header-bar {
@@ -246,9 +282,9 @@
             background: transparent;
             color: #888;
             border: none;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
-            transition: color 0.2s ease;
+            transition: color 0.2s ease, transform 0.2s ease;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -256,15 +292,16 @@
 
         .modal-close:hover {
             color: #ffffff;
+            transform: rotate(90deg);
         }
 
         .video-container {
             position: relative;
             padding-top: 56.25%;
             background-color: #000;
+            width: 100%;
         }
 
-        /* تنسيق مشغل الميديا الافتراضي للمتصفح */
         .video-container video {
             position: absolute;
             top: 0;
@@ -274,17 +311,79 @@
             object-fit: contain;
         }
 
-        @media (max-width: 768px) {
+        /* ==================== نظام الاستجابة الشامل (Responsive System) ==================== */
+
+        /* الشاشات المتوسطة والتابلت (أقل من 992px) */
+        @media (max-width: 992px) {
             .podcast-section {
-                padding-top: 110px;
+                padding-top: 130px;
+                padding-bottom: 60px;
             }
 
             .podcast-main-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .podcast-grid {
+                gap: 20px;
+                padding: 0 10px;
+            }
+        }
+
+        /* الشاشات الصغيرة والموبايل (أقل من 768px) */
+        @media (max-width: 768px) {
+            .podcast-section {
+                padding-top: 110px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .podcast-intro {
+                margin-bottom: 35px;
+            }
+
+            .podcast-main-title {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            .podcast-bio {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .podcast-grid {
+                grid-template-columns: 1fr;
+                /* كارت واحد بعرض الشاشة في الموبايل */
+                max-width: 480px;
+                /* الحفاظ على أبعاد الكارت مريحة ومظبوطة */
+            }
+
+            .modal-header-bar {
+                padding: 12px 15px;
             }
 
             .modal-video-title {
                 font-size: 1rem;
+            }
+
+            .modal-close {
+                font-size: 18px;
+            }
+        }
+
+        /* الشاشات الصغيرة جداً (أقل من 400px) */
+        @media (max-width: 400px) {
+            .podcast-main-title {
+                font-size: 1.5rem;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+
+            .card-content {
+                padding: 15px;
             }
         }
     </style>
@@ -466,7 +565,6 @@
 
                     modalVideoTitle.textContent = videoTitle;
 
-                    // تشغيل الفيديو المباشر من Cloudinary
                     videoPlayer.src = videoUrl;
                     videoPlayer.load();
                     videoPlayer.play();
@@ -478,7 +576,7 @@
             function handleClose() {
                 modal.classList.remove('active');
                 videoPlayer.pause();
-                videoPlayer.src = ''; // تفريغ الذاكرة فوراً لإيقاف الصوت
+                videoPlayer.src = '';
             }
 
             closeModal.addEventListener('click', handleClose);
