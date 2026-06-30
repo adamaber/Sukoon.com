@@ -554,377 +554,147 @@ body {
 
 
 
+        /* --- تصميم قسم المقالات --- */
+        .articles-section {
+            background-color: var(--bg-light);
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-/* --- إعدادات قسم المقالات المميزة --- */
-.blog-section {
-  padding: 60px 0;
-  background-color: var(--bg-light);
-  direction: rtl;
-}
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
+        /* الحاوية الأساسية للكروت */
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
 
-.section-header h2 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 12px;
-  font-weight: 700;
-}
+        /* تصميم الكارت الفردي (تم إزالة البوردر راديوس والظلال) */
+        .article-card {
+            background-color: var(--white);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            /* تم إلغاء الـ border-radius والـ box-shadow والـ hover من هنا */
+        }
 
-.section-header p {
-  color: var(--text-muted);
-  font-size: 1rem;
-}
+        .article-image {
+            width: 100%;
+            height: 220px;
+            background-color: #e0e6e8;
+            background-size: cover;
+            background-position: center;
+        }
 
-/* الـ Grid المطور ليستوعب 4 كروت بشكل ممتاز (auto-fit مع تصغير الحد الأدنى) */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  width: 100%;
-  margin: 0 auto;
-}
+        .article-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-/* تصميم الكارت المصغر على ستايل كروت المنتجات */
-.blog-card {
-  background: var(--white);
-  border-radius: 0px; /* تصميم حاد بدون انحناءات */
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
+        .article-tag {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
 
-/* الصورة مستطيلة بأبعاد عرضية متناسقة */
-.card-img {
-  width: 100%;
-  height: 260px; 
-  overflow: hidden;
-}
+        .article-card-title {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+            font-weight: 600;
+        }
 
-.card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+        .article-excerpt {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
 
-/* محتوى الكارت الملموم */
-.card-content {
-  padding: 15px; 
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
 
-.card-tag {
-  align-self: flex-start;
-  background: rgba(97, 164, 173, 0.12);
-  color: var(--primary-color); 
-  padding: 2px 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  border-radius: 0px;
-}
+        .read-more:hover {
+            color: var(--accent-color);
+            padding-right: 5px; /* حركة سهم بسيطة ومريحة */
+        }
 
-.card-content h3 {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  margin-bottom: 8px;
-  line-height: 1.4;
-  font-weight: 700;
-}
+        /* زر عرض المزيد المربوط بصفحة كل المقالات */
+        .view-all-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+        }
 
-.card-content p {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
+        .view-all-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
 
-/* زرار القراءة السفلي */
-.read-more-btn {
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  text-align: right;
-  padding: 0;
-  margin-top: auto;
-  text-decoration: underline;
-  transition: var(--transition-smooth);
-}
+        /* --- الشاشات الموبايل والتابلت (Responsive Slider) --- */
+        @media (max-width: 1024px) {
+            .articles-container {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding: 10px 20px 30px 20px;
+                margin-right: -20px;
+                margin-left: -20px;
+                gap: 20px;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+            }
 
-.read-more-btn:hover {
-  color: var(--accent-color);
-}
+            .articles-container::-webkit-scrollbar {
+                height: 5px;
+            }
+            .articles-container::-webkit-scrollbar-thumb {
+                background: var(--accent-color);
+                border-radius: 10px;
+            }
 
-/* زرار عرض المزيد في الأسفل */
-.more-articles-wrapper {
-  text-align: center;
-  margin-top: 40px;
-}
-
-
-
-
-
-/* الحالة الافتراضية للكروت المخفية (مغلقة تماماً وبدون أي أبعاد تسبب فراغات) */
-.blog-grid .hidden-card {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-30px) scale(0.95);
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    /* توقيت حركي فخم ومريح للعين (Cubic Bezier) */
-    transition: max-height 0.7s cubic-bezier(0.25, 1, 0.5, 1),
-                opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-                margin 0.5s ease, padding 0.5s ease;
-}
-
-/* فئة التفعيل: تفتح الكارت كلياً بمرونة تامة */
-.blog-grid .hidden-card.show-smooth {
-    max-height: 1000px; /* رقم افتراضي أكبر من حجم الكارت ليسمح بالفتح الكامل */
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-    /* إعادة المسافات والحشو الخاص بالتصميم الأصلي للكارت */
-    margin: revert; 
-    padding: revert;
-}
-
-
-
-.btn-view-more {
-  display: inline-block;
-  padding: 10px 30px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  border: 1px solid #000000;
-  border-radius: 0px;
-  font-size: 0.95rem;
-  transition: var(--transition-smooth);
-}
-
-.btn-view-more:hover {
-  background-color: var(--accent-color);
-}
-
-/* ------------------------------------------------
-   Responsive: السلايدر للموبايل (تقليب يمين وشمال)
------------------------------------------------- */
-@media (max-width: 768px) {
-  .blog-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 15px;
-    padding: 10px 5px 25px 5px;
-    scrollbar-width: none;
-  }
-  
-  .blog-grid::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .blog-card {
-    min-width: 75%; /* حجم مثالي يوضح حافة الكارت اللي بعده ليدل على التمرير */
-    scroll-snap-align: center;
-  }
-}
-
-/* ------------------------------------------------
-   تصميم الـ Modal المنبثق - ستايل كتاب فاخر (Book Edition)
------------------------------------------------- */
-.article-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: var(--transition-smooth);
-    direction: rtl;
-}
-
-.article-modal.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(25, 30, 31, 0.6); /* خلفية داكنة وهادئة لتركيز العين */
-    backdrop-filter: blur(10px);
-}
-
-.modal-wrapper {
-    background: #fbf9f6; /* لون ورق الكتب الكلاسيكي (Off-white) مريح جداً للعين */
-    width: 90%;
-    max-width: 750px; /* عرض مثالي لسطر الكتاب (لا طويل جداً ولا قصير) */
-    max-height: 85vh;
-    border-radius: 16px; /* زوايا كلاسيكية ناعمة وليست دائرية بشكل مفرط */
-    position: relative;
-    z-index: 10;
-    padding: 50px 60px; /* حواف عريضة تشبه هوامش الكتب */
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    transform: scale(0.96);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
-    
-    /* تحسين السكرول بار ليختفي ويظهر بنعومة */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(44, 94, 101, 0.2) transparent;
-}
-
-/* تخصيص السكرول بار للمتصفحات الحديثة */
-.modal-wrapper::-webkit-scrollbar {
-    width: 5px;
-}
-.modal-wrapper::-webkit-scrollbar-thumb {
-    background-color: rgba(44, 94, 101, 0.2);
-    border-radius: 10px;
-}
-
-.article-modal.active .modal-wrapper {
-    transform: scale(1);
-}
-
-/* زر الإغلاق - هادئ وغير مشتت */
-.close-modal-btn {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #8a8a8a;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.close-modal-btn:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
-}
-
-/* تصنيف المقال */
-.modal-tag {
-    display: inline-block;
-    color: var(--primary-color, #2c5e65);
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* عنوان المقال - فخم وواضح */
-.modal-body h2 {
-    font-family: 'Amiri', 'Traditional Arabic', 'Georgia', serif; /* خطوط سيريف كلاسيكية للكتب */
-    font-size: 2.2rem; 
-    color: #1a1a1a;
-    margin-bottom: 25px;
-    line-height: 1.4;
-    font-weight: 700;
-    padding-left: 50px;
-}
-
-.modal-body hr {
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    margin-bottom: 35px;
-}
-
-/* ------------------------------------------------
-   هندسة خطوط المقال (Typography & Layout Like a Book)
------------------------------------------------- */
-#modalFullContent {
-    /* اعتماد خطوط مخصصة للقراءة الطويلة (احرص على استدعاء خط مثل Amiri أو Cairo في مشروعك) */
-    font-family: 'Amiri', 'Segoe UI', Tahoma, serif; 
-    color: #2b2b2b; /* أسود دافئ مريح للعين، ليس فاقعاً */
-    font-size: 1.25rem; /* حجم خط مثالي ومريح جداً للقراءة */
-    line-height: 2; /* مسافة مزدوجة تقريباً بين السطور لمنع التداخل واللغبطة */
-    text-align: justify; /* محاذاة النص من الطرفين كصفحات الكتب */
-    text-justify: inter-word;
-}
-
-/* تنسيق الفقرات وفصلها بذكاء */
-#modalFullContent p {
-    margin-bottom: 28px; /* مسافة سخية بين كل فقرة والتالية */
-    text-indent: 15px; /* حركة اختيارية: إزاحة خفيفة لأول سطر في الفقرة مثل الروايات */
-}
-
-/* العناوين الداخلية (الفصول أو النقاط الرئيسية) */
-#modalFullContent h3 {
-    font-family: 'Amiri', 'Segoe UI', serif;
-    font-size: 1.6rem;
-    color: #111;
-    margin-top: 45px;
-    margin-bottom: 18px;
-    font-weight: 700;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    padding-bottom: 8px;
-}
-
-/* تنسيق القوائم إذا وجدت داخل الكتاب */
-#modalFullContent ul, 
-#modalFullContent ol {
-    margin-bottom: 28px;
-    padding-right: 30px;
-}
-
-#modalFullContent li {
-    margin-bottom: 12px;
-    list-style-type: square; /* نقاط أنيقة */
-}
-
-/* الاقتباسات الهامة داخل المقال */
-#modalFullContent blockquote {
-    font-family: 'Amiri', serif;
-    font-size: 1.35rem;
-    border-right: 3px solid #111;
-    background: rgba(0, 0, 0, 0.02);
-    padding: 20px 30px;
-    margin: 35px 0;
-    color: #444;
-    font-style: italic;
-}
-
-
-
+            .article-card {
+                flex: 0 0 290px;
+                scroll-snap-align: start;
+            }
+        }
 
 
 
