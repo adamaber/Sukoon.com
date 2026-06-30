@@ -1,1 +1,593 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- العنوان الرئيسي للمقال لتوافق الـ SEO -->
+    <title>جيل مشتت: كيف سرقت الهواتف تركيزنا؟ | منصة سكون</title>
+
+    <!-- وصف المقال لمشغلات ومحركات البحث -->
+    <meta name="description"
+        content="اقرأ مقال جيل مشتت: كيف سرقت الهواتف تركيزنا؟ بقلم د. غادة عطية. تحليل نفسي وحلول عملية لمواجهة إدمان الهاتف وضعف التركيز وقلة الإنجاز.">
+<link rel="stylesheet" href="css/style.css">
+    <meta name="keywords"
+        content="جيل مشتت, إدمان الهاتف, ضعف التركيز, قلة الإنجاز, حلول عملية, د. غادة عطية, منصة سكون">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dr. Ghada Attia">
+
+    <!-- تحسين ظهور الموقع على الموبايل -->
+    <meta name="theme-color" content="#2c5d63">
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" href="favicon/favicon.png">
+
+    <!-- الخطوط والملفات الخارجية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- تنسيقات صفحة المقال المريحة جداً والـ Responsive -->
+    <style>
+        :root {
+            --primary-color: #2C5E65;
+            --accent-color: #61A4AD;
+            --bg-light: #F7F9FA;
+            --text-dark: #2B383A;
+            --text-muted: #6E7E85;
+            --white: #FFFFFF;
+            --transition-smooth: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            /* تطبيق خط Cairo المعتمد */
+            background-color: var(--white);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* حاوية المقال الرئيسية */
+        .article-page-wrapper {
+            max-width: 900px;
+            margin: 120px auto 80px auto;
+            padding: 0 20px;
+        }
+
+        /* رأس المقال (العنوان والبيانات) */
+        .article-header {
+            text-align: right;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eef2f3;
+            padding-bottom: 20px;
+        }
+
+        .article-category {
+            color: var(--accent-color);
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .main-article-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* تنسيق الصورة الرئيسية للمقال بعد تحويلها لـ img tag */
+        .main-hero-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            /* لضمان عدم تمدد أو تشوه أبعاد الصورة */
+            margin-bottom: 40px;
+            border: 1px solid #eef2f3;
+            display: block;
+        }
+
+        /* محتوى المقال والفقرات */
+        .article-body-content {
+            text-align: right;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+        }
+
+        .article-intro {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        /* الأقسام والمواضيع الفرعية */
+        .sub-topic-section {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .sub-topic-title {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-right: 15px;
+        }
+
+        .sub-topic-title::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 15%;
+            height: 70%;
+            width: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .sub-topic-paragraph {
+            margin-bottom: 25px;
+            color: #3a4b4e;
+        }
+
+        /* صور المواضيع الفرعية */
+        .sub-topic-image {
+            width: 100%;
+            height: 380px;
+            background-size: cover;
+            background-position: center;
+            margin: 25px 0 35px 0;
+            border: 1px solid #eef2f3;
+        }
+
+        /* اقتباس مميز مريح بصرياً */
+        .article-quote {
+            background-color: var(--bg-light);
+            border-right: 5px solid var(--primary-color);
+            padding: 30px;
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* أزرار المشاركة أسفل المقال */
+        .share-article-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #eef2f3;
+            border-bottom: 1px solid #eef2f3;
+            padding: 20px 0;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .share-title {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            background-color: var(--text-muted);
+        }
+
+        .share-btn.fb {
+            background-color: #3b5998;
+        }
+
+        .share-btn.tw {
+            background-color: #1da1f2;
+        }
+
+        .share-btn.wa {
+            background-color: #25d366;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .share-btn.insta {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .share-btn.tiktok {
+            background-color: #000000;
+        }
+
+        /* --- شاشات الموبايل والتابلت (Responsive) --- */
+        @media (max-width: 768px) {
+            .article-page-wrapper {
+                margin-top: 100px;
+                padding: 0 15px;
+            }
+
+            .main-article-title {
+                font-size: 1.8rem;
+            }
+
+            .main-hero-image {
+                height: 250px;
+                margin-bottom: 25px;
+            }
+
+            .article-body-content {
+                font-size: 1.05rem;
+            }
+
+            .article-intro {
+                font-size: 1.15rem;
+                margin-bottom: 25px;
+            }
+
+            .sub-topic-title {
+                font-size: 1.35rem;
+            }
+
+            .sub-topic-image {
+                height: 220px;
+                margin: 20px 0;
+            }
+
+            .article-quote {
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+        }
+
+
+
+        /* تجهيز العناصر للاختفاء قبل الأنميشن */
+.article-header,
+.main-hero-image,
+.article-body-content,
+.share-article-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpSmooth 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* تحديد توقيت الظهور لكل عنصر بالترتيب ليعطي تأثير تتابع احترافي */
+.article-header {
+    animation-delay: 0.2s;
+}
+
+.main-hero-image {
+    animation-delay: 0.4s;
+}
+
+.article-body-content {
+    animation-delay: 0.6s;
+}
+
+.share-article-section {
+    animation-delay: 0.8s;
+}
+
+/* تأثير حركة الظهور والارتفاع السلس */
+@keyframes fadeInUpSmooth {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+
+            <!-- اللوجو النصي الاحترافي -->
+            <a href="index.html" class="logo-text-link">
+                <span class="logo-main">سُكون</span>
+                <span class="logo-sub">د. غادة عطية</span>
+                <span class="logo-dot">.</span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <div class="mobile-menu-logo">
+                    <span class="logo-main">سُكون</span>
+                    <span class="logo-sub">د. غادة عطية</span>
+                    <span class="logo-dot">.</span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+                    <li><a href="serves.html" class="nav-item">خدماتنا</a></li>
+                    <li><a href="articles.html" class="nav-item nav-articles">المقالات <span class="live-pulse"></span></a>
+                    </li>
+                    <li><a href="podcast.html" class="nav-item">البودكاست</a></li>
+                    <li><a href="book.html" class="nav-item">الكتب</a></li>
+                    <li><a href="about.html" class="nav-item">من نحن</a></li>
+                    <li class="contact-li"><a href="contact.html" class="nav-item contact-btn">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <!-- زر الهامبرجر للموبايل فقط -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="قائمة التنقل">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+        <!-- خلفية مظلمة خفيفة تظهر عند فتح المنيو في الموبايل -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- الصفحة الرئيسية للمقال -->
+    <div class="article-page-wrapper">
+        <main>
+            <article>
+                <!-- رأس المقال والبيانات -->
+                <header class="article-header">
+                    <span class="article-category">صحة نفسية وتطوير ذات</span>
+                    <h1 class="main-article-title">جيل مشتت: كيف سرقت الهواتف تركيزنا؟</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-user"></i> بقلم: د. غادة عطية</span>
+                        <span><i class="far fa-calendar-alt"></i> 30 يونيو 2026</span>
+                        <span><i class="far fa-clock"></i> مدة القراءة: 6 دقائق</span>
+                    </div>
+                </header>
+
+                <!-- الصورة الرئيسية العلوية للمقال (تم التعديل لـ img tag بنجاح) -->
+                <img src="https://res.cloudinary.com/dy2qgptrn/image/upload/v1782801345/Gemini_Generated_Image_r4aun1r4aun1r4au_l6acqq.png"
+                    class="main-hero-image" alt="جيل مشتت: كيف سرقت الهواتف تركيزنا؟">
+
+                <!-- محتوى المقال -->
+                <div class="article-body-content">
+                    <p class="article-intro">
+                        تتحرك شاشاتنا الزرقاء طوال اليوم دون توقف، محملة بآلاف الإشعارات والمقاطع السريعة التي تجذب
+                        انتباهنا رغماً عنا. في هذا المقال، نناقش بعمق كيف تحولت هذه الأداة الصغيرة في أيدينا إلى سارق
+                        صامت لأثمن ما نملك: قدرتنا على التركيز والإنتاج الواعي.
+                    </p>
+
+                    <!-- 1. إدمان الهاتف -->
+                    <section class="sub-topic-section">
+                        <h2 class="sub-topic-title">1. إدمان الهاتف: الفخ الرقمي اللامع</h2>
+                        <p class="sub-topic-paragraph">
+                            لم يعد الهاتف مجرد وسيلة اتصال، بل تحول إلى فخ نفسي مصمم بعناية للتلاعب بنظام المكافأة في
+                            أدمغتنا عبر إفراز هرمون "الدوبامين". كل "إعجاب" أو إشعار جديد يمنح العقل جرعة سعادة مؤقتة
+                            وسريعة، مما يدفعنا لتفقد الهاتف لا إرادياً لعشرات المرات يومياً، والوقوع في دائرة الإدمان
+                            الرقمي دون إدراك.
+                        </p>
+                        <div class="sub-topic-image"
+                            style="background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1782801626/Gemini_Generated_Image_k3moqbk3moqbk3mo_fl27nw.png');"
+                            aria-label="صورة تعبر عن إدمان الهاتف"></div>
+                    </section>
+
+                    <!-- اقتباس نصي مميز -->
+                    <blockquote class="article-quote">
+                        "الاستسلام لإشعارات الهاتف المستمرة يجعل عقولنا في حالة تشتت دائم، ويحرمنا من متعة الاستغراق
+                        العميق في تفاصيل حياتنا الحقيقية."
+                    </blockquote>
+
+                    <!-- 2. ضعف التركيز -->
+                    <section class="sub-topic-section">
+                        <h2 class="sub-topic-title">2. ضعف التركيز: خسارة الانتباه العميق</h2>
+                        <p class="sub-topic-paragraph">
+                            مع التعود على المحتوى الخاطف والمقاطع القصيرة، تبرمجت عقولنا على استقبال المعلومات السطحية
+                            فقط. أصبح من الصعب جداً على الإنسان المعاصر الجلوس لقراءة كتاب أو التركيز في مهمة واحدة لمدة
+                            نصف ساعة متواصلة دون الشعور برغبة عارمة في فتح الهاتف، مما أدى إلى ضعف حاد في مهارة التركيز
+                            العالي.
+                        </p>
+                        <div class="sub-topic-image"
+                            style="background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1782801724/Gemini_Generated_Image_wj9lyewj9lyewj9l_kucgaf.png');"
+                            aria-label="صورة تعبر عن تشتت وضعف التركيز"></div>
+                    </section>
+
+                    <!-- 3. قلة الإنجاز -->
+                    <section class="sub-topic-section">
+                        <h2 class="sub-topic-title">3. قلة الإنجاز: وهم الانشغال المستمر</h2>
+                        <p class="sub-topic-paragraph">
+                            يمر اليوم سريعاً ونشعر بأننا كنا "منشغلين" طوال الوقت، لكن عند مراجعة ما أنجزناه فعلياً
+                            نكتشف حصيلة ضئيلة جداً. الساعات تضيع بين التنقل العشوائي من تطبيق لآخر، مما يستهلك طاقتنا
+                            الذهنية ويتركنا في حالة إرهاق بدون تحقيق أهداف حقيقية على أرض الواقع، وهو ما يُعرف بوهم
+                            الإنجاز الرقمي.
+                        </p>
+                        <div class="sub-topic-image"
+                            style="background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1782801777/images_1_yi4imj.jpg');"
+                            aria-label="صورة تعبر عن قلة الإنتاجية وتراكم المهام"></div>
+                    </section>
+
+                    <!-- 4. حلول عملية -->
+                    <section class="sub-topic-section">
+                        <h2 class="sub-topic-title">4. حلول عملية: استعد السيطرة على عقلك</h2>
+                        <p class="sub-topic-paragraph">
+                            التعافي ليس مستحيلاً، بل يتطلب خطوات واعية وتدريجية. يمكنك البدء بـ "إغلاق جميع الإشعارات
+                            غير الضرورية"، وتحديد أوقات ثابتة لتفقد الهاتف خلال اليوم. استخدم تكنيك "العمل الفوقي"
+                            بالتركيز الكامل على مهمتك لمدة 25 دقيقة كاملة مع إبعاد الهاتف تماماً عن غرفتك، لتعيد تدريب
+                            عقلك على الانتباه واستعادة هدوء السكون الداخلي.
+                        </p>
+                        <div class="sub-topic-image"
+                            style="background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1782801878/fdb96cceeacf2a65fb215babfe0a5e08_vd9guv.jpg');"
+                            aria-label="صورة تعبر عن التوازن الرقمي والحلول العملية"></div>
+                    </section>
+                </div>
+
+                <!-- قسم مشاركة المقال -->
+                <div class="share-article-section">
+                    <span class="share-title">هل أعجبك المقال؟ شاركه مع من تحب:</span>
+                    <div class="share-buttons">
+                        <!-- فيسبوك -->
+                        <a href="#" id="share-fb" class="share-btn fb" target="_blank" title="مشاركة عبر فيسبوك">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <!-- واتساب -->
+                        <a href="#" id="share-wa" class="share-btn wa" target="_blank" title="مشاركة عبر واتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <!-- إنستغرام (نسخ الرابط للمشاركة) -->
+                        <a href="#" id="share-insta" class="share-btn insta"
+                            title="نسخ رابط المقال لمشاركته على إنستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- تيك توك (نسخ الرابط للمشاركة) -->
+                        <a href="#" id="share-tiktok" class="share-btn tiktok"
+                            title="نسخ رابط المقال لمشاركته على تيك توك">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- رسالة تنبيهية تظهر وتختفي عند نسخ الرابط بنجاح -->
+                <div id="toast-message"
+                    style="display: none; position: fixed; bottom: 20px; right: 20px; background: #2C5E65; color: #fff; padding: 12px 25px; border-radius: 8px; font-family: 'Cairo', sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999;">
+                    تم نسخ رابط المقال بنجاح! جاهز للمشاركة.
+                </div>
+
+
+            </article>
+        </main>
+    </div>
+
+     <footer class="main-footer">
+            <div class="footer-top">
+                <div class="footer-container">
+
+                    <div class="footer-column brand-col">
+                        <a href="index.html" class="logo-text-link">
+                            <span class="logo-main">سُكون</span>
+                            <span class="logo-sub">د. غادة عطية</span>
+                            <span class="logo-dot">.</span>
+                        </a>
+                        <p class="brand-desc">
+                            مساحتك الآمنة لخلع الأقنعة وبدء رحلة التعافي النفسي. نرافقك خطوة بخطوة نحو بناء حياة أكثر
+                            اتزانًا واطمئنانًا.
+                        </p>
+                        <div class="social-links social-icons">
+                            <a href="https://www.facebook.com/share/1BZ2SYhh7F/" class="social-icon" target="_blank"
+                                aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/dr.ghada_attia?igsh=ZjQwOW0wMG5oODJ0" class="social-icon"
+                                target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@dr_ghada_attia?_r=1&_t=ZS-96C08nLYHye" class="social-icon"
+                                target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.linkedin.com/in/dr-ghada-attia-9a28b12a5" class="social-icon"
+                                target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">روابط سريعة</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="about.html">عن الدكتورة</a></li>
+                            <li><a href="serves.html">الخدمات العلاجية</a></li>
+                            <li><a href="book.html">المكتبة والإصدارات</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">الدعم والمساعدة</h4>
+                        <ul class="footer-links">
+                            <li><a href="contact.html">حجز الجلسات</a></li>
+                            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                            <li><a href="terms.html">شروط الاستخدام</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column contact-col">
+                        <h4 class="footer-title">تواصل معنا</h4>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>المقر الان تحت الصيانة</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span dir="ltr">+20 122 778 4244</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@sokoon-drghada.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-container">
+                    <p class="copyrights">
+                        &copy; 2026 جميع الحقوق محفوظة لمنصة <strong>سُكون</strong> | تصميم وتطوير بكل حب
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+
+
+    <!-- سكريبت تشغيل روابط المشاركة والنسخ تلقائياً -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // الحصول على رابط المقال الحالي وعنوانه تلقائياً
+            const rawUrl = window.location.href;
+            const articleUrl = encodeURIComponent(rawUrl);
+            const articleTitle = encodeURIComponent(document.title);
+
+            // ربط اللينكات الجاهزة لـ فيسبوك وواتساب
+            document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${articleUrl}`;
+            document.getElementById('share-wa').href = `https://api.whatsapp.com/send?text=${articleTitle}%20${articleUrl}`;
+
+            // وظيفة نسخ الرابط لإنستغرام وتيك توك مع إظهار التنبيه
+            function handleCopy(e) {
+                e.preventDefault();
+                navigator.clipboard.writeText(rawUrl).then(() => {
+                    const toast = document.getElementById('toast-message');
+                    toast.style.display = 'block';
+                    setTimeout(() => { toast.style.display = 'none'; }, 3000);
+                }).catch(err => {
+                    console.error('فشل في نسخ الرابط: ', err);
+                });
+            }
+
+            document.getElementById('share-insta').addEventListener('click', handleCopy);
+            document.getElementById('share-tiktok').addEventListener('click', handleCopy);
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
