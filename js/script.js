@@ -75,41 +75,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==================== Hero Carousel ====================
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-indicators .dot');
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.dynamic-slide');
+    const dots = document.querySelectorAll('.v-dot');
+    let currentSlide = 0;
+    let slideInterval;
 
-    if (slides.length && dots.length) {
-
-        let currentSlide = 0;
-        const slideInterval = 6000;
-
-        function changeSlide(nextIndex) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-
-            currentSlide = nextIndex;
-
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            changeSlide((currentSlide + 1) % slides.length);
-        }
-
-        let autoSlide = setInterval(nextSlide, slideInterval);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                clearInterval(autoSlide);
-
-                changeSlide(index);
-
-                autoSlide = setInterval(nextSlide, slideInterval);
-            });
-        });
+    // دالة الانتقال لشريحة معينة
+    function goToSlide(index) {
+        // إزالة الكلاس النشط من الشريحة والنقطة الحالية
+        slides[currentSlide].classList.remove('active-slide');
+        dots[currentSlide].classList.remove('active');
+        
+        // تعيين الشريحة الجديدة
+        currentSlide = index;
+        
+        // إضافة الكلاس النشط للشريحة والنقطة الجديدة
+        slides[currentSlide].classList.add('active-slide');
+        dots[currentSlide].classList.add('active');
     }
+
+    // دالة الانتقال للشريحة التالية تلقائياً
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    // تشغيل التايمر التلقائي (كل 5 ثواني)
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // إيقاف التايمر وإعادة تشغيله عند الضغط اليدوي
+    function resetSlideShow() {
+        clearInterval(slideInterval);
+        startSlideShow();
+    }
+
+    // إضافة حدث الضغط على النقط الجانبية
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            if (currentSlide !== index) {
+                goToSlide(index);
+                resetSlideShow();
+            }
+        });
+    });
+
+    // بدء التشغيل لأول مرة
+    startSlideShow();
+});
 
     // ==================== Book Slider ====================
     const bookSlides = document.querySelectorAll('.book-slide');
