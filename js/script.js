@@ -75,56 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.dynamic-slide');
-    const dots = document.querySelectorAll('.v-dot');
-    let currentSlide = 0;
-    let slideInterval;
-
-    // دالة الانتقال لشريحة معينة
-    function goToSlide(index) {
-        // إزالة الكلاس النشط من الشريحة والنقطة الحالية
-        slides[currentSlide].classList.remove('active-slide');
-        dots[currentSlide].classList.remove('active');
-        
-        // تعيين الشريحة الجديدة
-        currentSlide = index;
-        
-        // إضافة الكلاس النشط للشريحة والنقطة الجديدة
-        slides[currentSlide].classList.add('active-slide');
-        dots[currentSlide].classList.add('active');
-    }
-
-    // دالة الانتقال للشريحة التالية تلقائياً
-    function nextSlide() {
-        let next = (currentSlide + 1) % slides.length;
-        goToSlide(next);
-    }
-
-    // تشغيل التايمر التلقائي (كل 5 ثواني)
-    function startSlideShow() {
-        slideInterval = setInterval(nextSlide, 5000);
-    }
-
-    // إيقاف التايمر وإعادة تشغيله عند الضغط اليدوي
-    function resetSlideShow() {
-        clearInterval(slideInterval);
-        startSlideShow();
-    }
-
-    // إضافة حدث الضغط على النقط الجانبية
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            if (currentSlide !== index) {
-                goToSlide(index);
-                resetSlideShow();
-            }
-        });
-    });
-
-    // بدء التشغيل لأول مرة
-    startSlideShow();
-});
 
     // ==================== Book Slider ====================
     const bookSlides = document.querySelectorAll('.book-slide');
@@ -377,3 +327,64 @@ function closeModal(modalId) {
         modal.style.display = 'none';
     }, 400);
 }
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.dynamic-slide');
+    const dots = document.querySelectorAll('.v-dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    // دالة الانتقال لشريحة معينة
+    function goToSlide(index) {
+        // إزالة الكلاس النشط من الشريحة والنقطة الحالية
+        slides[currentSlide].classList.remove('active-slide');
+        dots[currentSlide].classList.remove('active');
+        
+        // تعيين الشريحة الجديدة
+        currentSlide = index;
+        
+        // إضافة الكلاس النشط للشريحة والنقطة الجديدة
+        slides[currentSlide].classList.add('active-slide');
+        dots[currentSlide].classList.add('active');
+    }
+
+    // دالة الانتقال للشريحة التالية تلقائياً
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    // تشغيل التايمر التلقائي (كل 5 ثواني)
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // إيقاف التايمر وإعادة تشغيله عند الضغط اليدوي
+    function resetSlideShow() {
+        clearInterval(slideInterval);
+        startSlideShow();
+    }
+
+    // إضافة حدث الضغط على النقط الجانبية
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            if (currentSlide !== index) {
+                goToSlide(index);
+                resetSlideShow();
+            }
+        });
+    });
+
+    // بدء التشغيل لأول مرة
+    startSlideShow();
+});
