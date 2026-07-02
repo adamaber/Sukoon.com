@@ -13,6 +13,12 @@
     --white: #FFFFFF;
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-subtle: 0 4px 20px rgba(44, 94, 101, 0.08);
+     --bg-dark: #0f1e22;       /* خلفية داكنة مريحة جداً للعين ومستوحاة من الليل والسكون */
+    --primary-teal: #61a4ad;  /* لون السكون الأساسي */
+    --primary-light: #e2f1f3; /* اللون الفاتح للنصوص */
+    --white-pure: #ffffff;
+    --text-muted: #a3b8bc;
+    --transition-cubic: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
