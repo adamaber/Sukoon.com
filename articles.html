@@ -33,9 +33,6 @@
     <meta name="google-site-verification" content="UjQxhleFgMQLIVkcAG-kS2zcIIefGlkQAX4LpfGU7Mg" />
     <meta name="author" content="Dr. Ghada Attia">
 
-    <!-- أيقونة الموقع -->
-    <link rel="icon" href="favicon/favicon.png">
-
     <!-- Canonical URL -->
     <link rel="canonical" href="https://sukoon.icu/">
 
@@ -45,7 +42,7 @@
     <meta property="og:description"
         content="مقالات متخصصة في الصحة النفسية وتعديل السلوك ودعم ذوي الاحتياجات الخاصة مع د. غادة عطية.">
     <meta property="og:image"
-        content="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%8ور_j1sxxu.png">
+        content="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%88_j1sxxu.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_EG">
     <meta property="og:site_name" content="منصة سكون">
@@ -55,7 +52,7 @@
     <meta name="twitter:title" content="المقالات | سكون - د. غادة عطية">
     <meta name="twitter:description" content="مقالات متخصصة في العلاج النفسي والدعم لذوي الاحتياجات الخاصة.">
     <meta name="twitter:image"
-        content="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%8ور_j1sxxu.png">
+        content="https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%88_j1sxxu.png">
 
     <link rel="alternate" hreflang="ar" href="https://sukoon.icu/">
     <link rel="alternate" hreflang="en" href="https://sukoon.icu/en/">
@@ -77,7 +74,7 @@
       "@type": "MedicalClinic",
       "name": "منصة سكون - د. غادة عطية",
       "url": "https://sukoon.icu/",
-      "image": "https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%8ور_j1sxxu.png",
+      "image": "https://res.cloudinary.com/dy2qgptrn/image/upload/v1780822043/%D9%84%D9%88%D8%AC%D9%88_j1sxxu.png",
       "description": "جلسات علاج نفسي واستشارات نفسية وخدمات الاحتياجات الخاصة.",
       "medicalSpecialty": [
         "Psychiatry",
@@ -126,7 +123,6 @@
             font-weight: 500;
         }
 
-        /* الحاوية الأساسية للكروت في الشاشات الكبيرة (Grid - 4 أعمدة) */
         .articles-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -135,7 +131,6 @@
             margin: 0 auto;
         }
 
-        /* تصميم كارت فلات تماماً بدون ظلال وبدون حواف دائرية */
         .article-card {
             background-color: var(--white);
             overflow: hidden;
@@ -200,7 +195,6 @@
             padding-right: 5px;
         }
 
-        /* --- شاشات الموبايل والتابلت (السطر كارتين بالظبط مع سكرول داخلي مريح) --- */
         @media (max-width: 1024px) {
             .articles-section {
                 padding-top: 90px;
@@ -210,9 +204,7 @@
 
             .articles-container {
                 grid-template-columns: repeat(2, 1fr);
-                /* إجبار التوزيع على عمودين (كارتين في السطر) */
                 overflow-x: auto;
-                /* تفعيل السكرول الأفقي للسطر */
                 scroll-snap-type: x mandatory;
                 gap: 20px;
                 padding: 10px 5px 25px 5px;
@@ -220,7 +212,6 @@
                 -webkit-overflow-scrolling: touch;
             }
 
-            /* إخفاء السكرول بار للحفاظ على المظهر الفلات المتناسق */
             .articles-container::-webkit-scrollbar {
                 height: 4px;
             }
@@ -230,10 +221,8 @@
                 border-radius: 10px;
             }
 
-            /* زيادة حجم عرض الكروت داخل السطر لإجبارها على السكرول بشكل مستريح */
             .article-card {
                 min-width: 280px;
-                /* جعل الكارت عريض ومستريح وباقي محتواه يسحب يمين وشمال */
                 scroll-snap-align: start;
             }
 
@@ -258,11 +247,9 @@
 
 <body>
 
-    <!-- الهيدر الرئيسي للموقع -->
     <header class="main-header">
         <div class="header-container">
 
-            <!-- اللوجو النصي الاحترافي -->
             <a href="index.html" class="logo-text-link">
                 <span class="logo-main">سُكون</span>
                 <span class="logo-sub">د. غادة عطية</span>
@@ -286,7 +273,6 @@
                 </ul>
             </nav>
 
-            <!-- زر الهامبرجر للموبايل فقط -->
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="قائمة التنقل">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -297,7 +283,6 @@
         <div class="menu-overlay" id="menuOverlay"></div>
     </header>
 
-    <!-- قسم المقالات الفلات المحدث (كارتين عراض بسكرول مستقل للسطر) -->
     <main id="artkels">
         <section class="articles-section">
             <h1 class="section-title">مقالات سكون</h1>
@@ -305,7 +290,7 @@
 
             <div class="articles-container">
 
-               <!-- المقال الأول -->
+                <!-- المقال الأول -->
                 <article class="article-card">
                     <div class="article-image"
                         style="background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1782801990/%D8%A7%D8%AF%D9%85%D8%A7%D9%86_%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81_w034n5.jpg');">
@@ -361,26 +346,15 @@
                     </div>
                 </article>
 
-                                <!-- المقال الخامس -->
+                <!-- المقال الخامس -->
                 <article class="article-card">
                     <div class="article-image" style="background-image: url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1783178806/%D9%85%D9%82%D8%A7%D9%84_51_cesi5x.jpg');">
                     </div>
-
                     <div class="article-content">
                         <span class="article-tag">صحة نفسية وتطوير ذات</span>
-
-                        <h3 class="article-card-title">
-                            الاحتراق النفسي: لماذا نشعر أننا متعبون طوال الوقت؟
-                        </h3>
-
-                        <p class="article-excerpt">
-                            لماذا نستيقظ مرهقين رغم النوم؟ وكيف يتحول الضغط اليومي إلى احتراق نفسي يؤثر على التركيز
-                            والعلاقات وجودة الحياة؟ تعرف على العلامات المبكرة وطرق التعافي...
-                        </p>
-
-                        <a href="article5.html" class="read-more">
-                            اقرأ المقال كـاملاً &larr;
-                        </a>
+                        <h3 class="article-card-title">الاحتراق النفسي: لماذا نشعر أننا متعبون طوال الوقت؟</h3>
+                        <p class="article-excerpt">لماذا نستيقظ مرهقين رغم النوم؟ وكيف يتحول الضغط اليومي إلى احتراق نفسي يؤثر على التركيز والعلاقات وجودة الحياة؟ تعرف على العلامات المبكرة وطرق التعافي...</p>
+                        <a href="article5.html" class="read-more">اقرأ المقال كـاملاً &larr;</a>
                     </div>
                 </article>
 
@@ -388,7 +362,6 @@
         </section>
     </main>
 
-    <!-- الفوتر الرئيسي للموقع -->
     <footer class="main-footer">
         <div class="footer-top">
             <div class="footer-container">
@@ -400,18 +373,13 @@
                         <span class="logo-dot">.</span>
                     </a>
                     <p class="brand-desc">
-                        مساحتك الآمنة لخلع الأقنعة وبدء رحلة التعافي النفسي. نرافقك خطوة بخطوة نحو بناء حياة أكثر
-                        اتزانًا واطمئنانًا.
+                        مساحتك الآمنة لخلع الأقنعة وبدء رحلة التعافي النفسي. نرافقك خطوة بخطوة نحو بناء حياة أكثر اتزانًا واطمئنانًا.
                     </p>
                     <div class="social-links social-icons">
-                        <a href="https://www.facebook.com/share/1BZ2SYhh7F/" class="social-icon" target="_blank"
-                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/dr.ghada_attia?igsh=ZjQwOW0wMG5oODJ0" class="social-icon"
-                            target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@dr_ghada_attia?_r=1&_t=ZS-96C08nLYHye" class="social-icon"
-                            target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.linkedin.com/in/dr-ghada-attia-9a28b12a5" class="social-icon"
-                            target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/share/1BZ2SYhh7F/" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dr.ghada_attia?igsh=ZjQwOW0wMG5oODJ0" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@dr_ghada_attia?_r=1&_t=ZS-96C08nLYHye" class="social-icon" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/dr-ghada-attia-9a28b12a5" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
