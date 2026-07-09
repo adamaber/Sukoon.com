@@ -915,10 +915,15 @@ body {
 
 
 
+/* لضمان عدم خروج أي عنصر أو ضغط المحتوى داخلياً */
+.books-section * {
+    box-sizing: border-box;
+}
+
 /* --- 2. حاوية قسم الكتب الأساسي --- */
 .books-section {
     background-color: var(--bg-light);
-    padding: 100px 0; 
+    padding: 80px 0; 
     direction: rtl; 
     overflow: hidden; 
 }
@@ -926,13 +931,13 @@ body {
 .section-container {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 /* رأس القسم */
 .section-header {
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 50px;
 }
 
 .section-badge {
@@ -949,30 +954,30 @@ body {
 
 .section-title {
     color: var(--text-dark);
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 800;
     margin-bottom: 14px;
 }
 
 .section-subtitle {
     color: var(--text-muted);
-    font-size: 16px;
+    font-size: 15px;
     max-width: 550px;
     margin: 0 auto;
     line-height: 1.7;
 }
 
 /* ==========================================================================
-   3. الـ Grid المتجاوب (سكرول مرن مريح للموبايل والـ Grid للكمبيوتر)
+   3. الـ Grid المتجاوب (سكرول حر 100% للموبايل والـ Grid للكمبيوتر)
    ========================================================================== */
 .books-grid-container {
     display: flex;
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     scroll-behavior: smooth;
-    gap: 24px;
-    padding: 10px 24px 30px 24px; 
-    margin: 0 -24px; 
+    gap: 20px;
+    padding: 10px 20px 30px 20px; 
+    margin: 0 -20px; 
     scrollbar-width: none; 
 }
 
@@ -980,7 +985,7 @@ body {
     display: none;
 }
 
-/* الكرت الفلات المتجاوب بأريحية كاملة */
+/* الكرت الفلات المتجاوب بأريحية كاملة وبدون أي قيود عرض */
 .book-product-card {
     background: var(--white);
     border-radius: 0px; 
@@ -990,10 +995,9 @@ body {
     border: var(--border-flat);
     transition: var(--transition-smooth);
     
-    /* هنا السر: الكرت يأخذ 85% من مساحة عرض الشاشة ليرتاح تماماً، والباقي للكرت التالي */
-    flex: 0 0 calc(85% - 24px); 
-    max-width: 340px; /* سقف حماية لمنع التمدد الزائد في التابلت قبل نقطة التحول */
-    scroll-snap-align: center; /* ليقف الكرت في المنتصف تماماً عند السكرول للموبايل */
+    /* الكرت يأخذ مساحة الشاشة كاملة تقريباً ليرتاح النص والأزرار تماماً */
+    flex: 0 0 88vw; 
+    scroll-snap-align: center; 
 }
 
 .book-product-card:hover {
@@ -1044,6 +1048,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: 100%;
 }
 
 .card-author {
@@ -1102,9 +1107,9 @@ body {
 }
 
 .btn-card-buy, .btn-card-preview {
-    padding: 12px 16px;
+    padding: 14px 16px; /* زيادة البادينج لتصبح مريحة جداً للمس في الموبايل */
     border-radius: 0px; 
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
@@ -1237,12 +1242,12 @@ body {
    ========================================================================== */
 @media (max-width: 767px) {
     .section-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 }
 
 @media (min-width: 768px) {
-    /* إلغاء السكرول الجانبي للتابلت والكمبيوتر والتحول لـ Grid ذكي ومستقر */
+    /* إلغاء السكرول والتحول إلى كروت مرنة تأخذ راحتها في الـ Grid */
     .books-grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -1253,8 +1258,7 @@ body {
     }
 
     .book-product-card {
-        flex: unset; /* إلغاء العرض المقيد ونسب الـ flex للموبايل */
-        max-width: unset; /* إلغاء الحد الأقصى للموبايل ليأخذ راحته بالـ Grid */
+        flex: unset; /* إلغاء الـ 88vw الخاصة بالموبايل فوراً */
     }
 
     /* النوافذ المنبثقة تظهر في السنتر في الشاشات الكبيرة */
