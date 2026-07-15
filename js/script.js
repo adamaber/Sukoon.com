@@ -388,3 +388,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // بدء التشغيل لأول مرة
     startSlideShow();
 });
+
+
+// الانتظار حتى تحميل هيكل الصفحة بالكامل (DOM) قبل تشغيل السكربت
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // تحديد جميع العناصر التي تحتوي على كلاس العداد الرقمي
+    const counterNumbers = document.querySelectorAll(".count-num");
+    
+    // الدالة المسؤولة عن تشغيل عداد الأرقام تدريجياً
+    const startCounting = (element) => {
+        // جلب الرقم المستهدف من خاصية (data-target) وتحويله لنوع رقمي
+        const target = parseInt(element.getAttribute("data-target"), 10);
+        const duration = 2000; // المدة الإجمالية للحركة بالملي ثانية (ثانيتين)
+        
+        // حساب الوقت الفاصل بين كل زيادة (لا يقل عن 15ms لضمان سلاسة الأداء)
+        const stepTime = Math.max(Math.floor(duration / target), 15);
+        let current = 0; // نقطة البداية للعداد
+
+        // الدالة الفرعية لتكرار عملية الزيادة
+        const step = () => {
+            // حساب قيمة الزيادة في كل خطوة بناءً على الوقت والهدف
+            const increment = Math.ceil(target / (duration / stepTime));
+            current += increment;
+
+            // التحقق إذا وصلنا للرقم المستهدف أو تجاوزناه
+            if (current >= target) {
+                // إظهار الرقم النهائي منسقاً (مثال: إضافة فاصلة الآلاف تلقائياً)
+                element.innerText = target.toLocaleString();
+            } else {
+                // تحديث النص بالرقم الحالي وتكرار الدالة بعد الوقت المحدد
+                element.innerText = current.toLocaleString();
+                setTimeout(step, stepTime);
+            }
+        };
+
+        // بدء تشغيل أول خطوة في العداد
+        step();
+    };
+
+    // إعداد مراقب الشاشة (Intersection Observer) لتشغيل العداد أول ما يظهر أمام العميل
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // التحقق إذا كان العنصر مرئياً داخل الشاشة
+            if (entry.isIntersecting) {
+                startCounting(entry.target); // تشغيل العداد للعنصر المرئي
+                observer.unobserve(entry.target); // إيقاف مراقبة العنصر لعدم تكرار الحركة عند النزول والصعود
+            }
+        });
+    }, { 
+        threshold: 0.5 // يبدأ التأثير عندما يظهر 50% من القسم داخل الشاشة
+    });
+
+    // تفعيل المراقب على كل عناصر العدادات المحددة في الصفحة
+    counterNumbers.forEach(num => observer.observe(num));
+});
