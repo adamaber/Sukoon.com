@@ -443,3 +443,31 @@ document.addEventListener("DOMContentLoaded", () => {
     // تفعيل المراقب على كل عناصر العدادات المحددة في الصفحة
     counterNumbers.forEach(num => observer.observe(num));
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const articlesDropdown = document.getElementById('articlesDropdown');
+    const dropdownContainer = document.getElementById('articlesDropdownContainer');
+
+    if (articlesDropdown && dropdownContainer) {
+        articlesDropdown.addEventListener('click', function (e) {
+            // إذا كان المستخدم يتصفح من شاشة كمبيوتر (أكبر من 768px)
+            if (window.innerWidth > 768) {
+                e.preventDefault(); // نمنع الانتقال لصفحة المقالات
+                e.stopPropagation(); // نمنع تداخل الضغطة مع باقي الصفحة
+                
+                dropdownContainer.classList.toggle('open'); // نفتح الستارة
+            }
+            // لو شاشة موبايل (أصغر من 768px) مش هنعمل preventDefault خالص، وهنسيب اللينك يوديه لـ articles.html علطول
+        });
+
+        // غلق الستارة تلقائياً في الكمبيوتر عند الضغط في أي مكان خارجي
+        document.addEventListener('click', function (e) {
+            if (window.innerWidth > 768 && !dropdownContainer.contains(e.target)) {
+                dropdownContainer.classList.remove('open');
+            }
+        });
+    }
+});
