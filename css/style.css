@@ -166,6 +166,119 @@ body {
     /* إلغاء الخط السفلي للزر */
 }
 
+
+/* ==================== نظام الـ Mega Dropdown المطور للمقالات (فتح بالضغط) ==================== */
+
+/* في الديسكتوب: إلغاء relative لتأخذ القائمة عرض الشاشة بالكامل بناءً على الهيدر */
+@media (min-width: 769px) {
+    .nav-item-dropdown {
+        position: static;
+    }
+}
+
+/* السهم الصغير بجانب كلمة المقالات */
+.dropdown-icon {
+    font-size: 0.7rem;
+    margin-right: 5px;
+    transition: var(--transition-smooth);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* لوحة الميجا منيو المنسدلة (ستارة كاملة العرض) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    /* تظهر أسفل الهيدر مباشرة */
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 25px 50px rgba(44, 94, 101, 0.12);
+    border-bottom: 3px solid var(--primary-color);
+    /* شريط سفلي جمالي بلون الهوية */
+    z-index: 999;
+
+    /* حشو داخلي متناسق يضمن بقاء العناصر في منتصف الشاشة مع الحواف */
+    padding: 40px calc((100% - 1200px) / 2 + 20px);
+
+    /* تأثير الستارة المبدئي (مغلق) */
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    /* مطوية */
+    transform-origin: top;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* الكلاس الخاص بفتح الستارة عند الضغط (JS Triggered) */
+.nav-item-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    /* تفتح كستارة لأسفل */
+}
+
+/* تدوير السهم الصغير عند الفتح */
+.nav-item-dropdown.open .dropdown-icon {
+    transform: rotate(180deg);
+    color: var(--accent-color);
+}
+
+/* تقسيم الشبكة الداخلي للمقالات (5 أعمدة) */
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    direction: rtl;
+    /* اتجاه الكتابة عربي */
+}
+
+/* العمود الفردي */
+.dropdown-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* عنوان الكاتيجوري الرئيسي */
+.col-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(97, 164, 173, 0.2);
+    position: relative;
+}
+
+/* الروابط الفرعية داخل الكاتيجوري */
+.col-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.col-links li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.6;
+    transition: var(--transition-smooth);
+    display: block;
+}
+
+.col-links li a:hover {
+    color: var(--accent-color);
+    transform: translateX(-6px);
+    /* إزاحة ناعمة لليمين عند تمرير الماوس */
+}
+
+
 /* --- 5. زر الهامبرجر (شاشات الموبايل) --- */
 .hamburger-btn {
     display: none;
@@ -195,12 +308,12 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(44, 94, 101, 0.35); /* تم زيادة الشفافية قليلاً بدلاً من الـ blur المتعب للمتصفح */
+    background-color: rgba(44, 94, 101, 0.35);
     z-index: 990;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-smooth);
-    will-change: opacity, visibility; /* تسريع معالجة الأنيميشن في الموبايل */
+    will-change: opacity, visibility;
 }
 
 .menu-overlay.active {
@@ -220,22 +333,21 @@ body {
         position: fixed;
         top: 0;
         right: -100%;
-        /* مخفية خارج الشاشة يميناً */
-        width: 280px;
+        width: 300px;
         height: 100vh;
         background-color: var(--white);
         z-index: 1000;
-        padding: 40px 30px;
+        padding: 40px 24px;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
         transition: var(--transition-smooth);
         display: flex;
         flex-direction: column;
-        will-change: right; /* تعديل: يجعل حركة خروج القائمة ناعمة وبدون تأثير على العناصر الخلفية */
+        will-change: right;
+        overflow-y: auto;
     }
 
     .nav-menu.active {
         right: 0;
-        /* تظهر بسلاسة عند الضغط */
     }
 
     .mobile-menu-logo {
@@ -277,6 +389,15 @@ body {
     .hamburger-btn.active .bar:nth-child(3) {
         transform: rotate(45deg);
     }
+
+    /* ==================== الموبايل: إخفاء الدروب داون نهائياً والتحويل المباشر ==================== */
+    .dropdown-menu {
+        display: none !important;
+    }
+
+    .dropdown-icon {
+        display: none !important;
+    }
 }
 
 
@@ -285,14 +406,14 @@ body {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 8px; /* مسافة بين كلمة المقالات والنقطة */
+    gap: 8px;
 }
 
 /* النقطة الحمراء الأساسية */
 .live-pulse {
     width: 8px;
     height: 8px;
-    background-color: #ff4d4d; /* لون أحمر واضح وحيوي */
+    background-color: #ff4d4d;
     border-radius: 50%;
     position: relative;
     display: inline-block;
@@ -318,12 +439,12 @@ body {
         transform: scale(1);
         opacity: 0.8;
     }
+
     100% {
-        transform: scale(2.8); /* حجم انتشار النبضة */
-        opacity: 0; /* تختفي تدريجياً */
+        transform: scale(2.8);
+        opacity: 0;
     }
 }
-
 /* --- 8. قسم الهيرو الاحترافي (Hero Section) --- */
 /* --- تصميم هيرو سكون الفاخر المطور (Premium Editorial Layout) --- */
 .skoon-editorial-hero {
