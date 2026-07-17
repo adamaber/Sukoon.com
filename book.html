@@ -141,42 +141,109 @@
 
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
+  <header class="main-header">
+    <div class="header-container">
 
-            <a href="index.html" class="logo-text-link">
+        <a href="index.html" class="logo-text-link">
+            <span class="logo-main">سُكون</span>
+            <span class="logo-sub">د. غادة عطية</span>
+            <span class="logo-dot">.</span>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+            <div class="mobile-menu-logo">
                 <span class="logo-main">سُكون</span>
                 <span class="logo-sub">د. غادة عطية</span>
                 <span class="logo-dot">.</span>
-            </a>
+            </div>
 
-            <nav class="nav-menu" id="navMenu">
-                <div class="mobile-menu-logo">
-                    <span class="logo-main">سُكون</span>
-                    <span class="logo-sub">د. غادة عطية</span>
-                    <span class="logo-dot">.</span>
-                </div>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-item">الرئيسية</a></li>
-                    <li><a href="serves.html" class="nav-item">خدماتنا</a></li>
-                    <li><a href="index.html#artkels" class="nav-item nav-articles">المقالات <span
-                                class="live-pulse"></span></a></li>
-                    <li><a href="podcast.html" class="nav-item">البودكاست</a></li>
-                    <li><a href="book.html" class="nav-item active">الكتب</a></li>
-                    <li><a href="about.html" class="nav-item">من نحن</a></li>
-                    <li class="contact-li"><a href="contact.html" class="nav-item contact-btn">تواصل معنا</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-item">الرئيسية</a></li>
+                <li><a href="serves.html" class="nav-item">خدماتنا</a></li>
 
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="قائمة التنقل">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+                <li class="nav-item-dropdown" id="articlesDropdownContainer">
+                    <a href="articles.html" class="nav-item nav-articles dropdown-toggle"
+                        id="articlesDropdown">
+                        المقالات <span class="live-pulse"></span>
+                        <i class="dropdown-icon">▼</i>
+                    </a>
 
-        </div>
-        <div class="menu-overlay" id="menuOverlay"></div>
-    </header>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-grid">
+
+                            <div class="dropdown-col">
+                                <span class="col-title">القلق</span>
+                                <ul class="col-links">
+                                    <li><a href="anxiety-info.html">ما هو اضطراب القلق؟ (دليل شامل)</a></li>
+                                    <li><a href="anxiety-symptoms.html">أعراض القلق الجسدية والنفسية</a></li>
+                                    <li><a href="panic-attacks.html">كيف تتعامل مع نوبات الهلع؟</a></li>
+                                    <li><a href="anxiety-cure.html">هل القلق مرض يمكن علاجه؟</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown-col">
+                                <span class="col-title">الاكتئاب</span>
+                                <ul class="col-links">
+                                    <li><a href="depression-info.html">ما هو الاكتئاب؟</a></li>
+                                    <li><a href="depression-symptoms.html">أعراض الاكتئاب</a></li>
+                                    <li><a href="sadness-vs-depression.html">الفرق بين الحزن والاكتئاب</a></li>
+                                    <li><a href="depression-treatment.html">طرق علاج الاكتئاب</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown-col">
+                                <span class="col-title">الوسواس القهري</span>
+                                <ul class="col-links">
+                                    <li><a href="ocd-info.html">ما هو الوسواس القهري؟</a></li>
+                                    <li><a href="ocd-symptoms.html">أعراض الوسواس القهري</a></li>
+                                    <li><a href="ocd-cure.html">هل يمكن الشفاء من الوسواس؟</a></li>
+                                    <li><a href="ocd-behavioral-therapy.html">العلاج السلوكي للوسواس</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown-col">
+                                <span class="col-title">العلاقات</span>
+                                <ul class="col-links">
+                                    <li><a href="narcissist-deal.html">كيف تتعامل مع الشخص النرجسي؟</a></li>
+                                    <li><a href="toxic-relationship.html">علامات العلاقة السامة</a></li>
+                                    <li><a href="betrayal-psychology.html">أسباب الخيانة من منظور نفسي</a></li>
+                                    <li><a href="self-confidence-build.html">كيف تبني ثقتك بنفسك؟</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown-col">
+                                <span class="col-title">تطوير الذات</span>
+                                <ul class="col-links">
+                                    <li><a href="increase-confidence.html">كيف تزيد ثقتك بنفسك؟</a></li>
+                                    <li><a href="overthinking.html">كيف تتخلص من التفكير الزائد؟</a></li>
+                                    <li><a href="stress-management.html">كيف تتعامل مع الضغط النفسي؟</a></li>
+                                    <li><a href="mental-health-daily.html">كيف تحسن صحتك النفسية يوميًا؟</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="podcast.html" class="nav-item">البودكاست</a></li>
+                <li><a href="book.html" class="nav-item active">الكتب</a></li>
+                <li><a href="about.html" class="nav-item">من نحن</a></li>
+                <li class="contact-li">
+                    <a href="contact.html" class="nav-item contact-btn">تواصل معنا</a>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="قائمة التنقل">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+</header>
 
     <section class="page-title-section"
         style="background: linear-gradient(135deg, rgba(44, 93, 99, 0.95), rgba(18, 48, 51, 0.95)), url('https://res.cloudinary.com/dy2qgptrn/image/upload/v1780825940/ebced5f1e2e0a8cae3c9c974634f6b37_s8ioo4.jpg') center/cover; padding: 120px 0 60px; text-align: center; color: #fff;">
